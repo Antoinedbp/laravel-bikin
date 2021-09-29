@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\TitreController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DeuxiemeSectionController;
 use App\Http\Controllers\FeatureController;
@@ -26,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.main');
 });
 
 Route::get('/backoffice',[BackController::class, 'index'])->name('hombo');
