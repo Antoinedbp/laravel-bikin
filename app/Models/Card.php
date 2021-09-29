@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
     use HasFactory;
+    public function portfolios() {
+        return $this->hasMany(Portfolio::class);
+    }
 }

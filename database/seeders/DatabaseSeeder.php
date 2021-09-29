@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
             FooterSeeder::class,
             NavbarSeeder::class,
             PremiereSectionSeeder::class,
+            AppSeeder::class,
+            WebSeeder::class,
+            CardSeeder::class,
         ]);
     }
 }
