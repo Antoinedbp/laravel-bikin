@@ -76,7 +76,6 @@ class NavbarController extends Controller
             "chemin"=>["required"]
         ]);
         
-        $navbar = new Navbar();
         $navbar->chemin = $request->chemin;
         $navbar->save();
         return redirect('/');

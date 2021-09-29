@@ -73,15 +73,20 @@ class FeatureController extends Controller
         $this->authorize("update", Feature::class);
 
         request()->validate([
+            "image"=>["required"],
             "titre"=>["required"],
+            "sous-titre"=>["required"],
             "description1"=>["required"],
-            "description2"=>["required"]
+            "description2"=>["required"],
+            "description3"=>["required"]
         ]);
-        
-        $feature = new Feature();
+
+        $feature->image = $request->image;
         $feature->titre = $request->titre;
+        $feature->sous_titre = $request->sous_titre;
         $feature->description1 = $request->description1;
         $feature->description2 = $request->description2;
+        $feature->description3 = $request->description3;
         $feature->save();
         return redirect('/');
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -74,13 +75,18 @@ class TeamController extends Controller
         $this->authorize("update", Team::class);
 
         request()->validate([
-            "titre"=>["required"],
-            "description"=>["required"]
+            "photo"=>["required"],
+            "nom"=>["required"],
+            "statut"=>["required"]
         ]);
         
-        $team = new Team();
-        $team->titre = $request->titre;
-        $team->description = $request->description;
+        if ($request->file('img') !== null) {
+            Storage::disk("public")->delete("img/" . $team->photo);
+            $team->photo= $request->file("url")->hashName();
+            $request->file("url")->storePublicly("img", "public");
+        }
+        $team->nom = $request->nom;
+        $team->statut = $request->statut;
         $team->save();
         return redirect('/');
     }

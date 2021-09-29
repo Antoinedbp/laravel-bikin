@@ -74,17 +74,21 @@ class TestimonialController extends Controller
         $this->authorize("update", Testimonial::class);
 
         $request->validate([
-            "titre" => ["required"],
-            "url" => ["required"],
-            "description" => ["required"]
+            "description" => ["required"],
+            "photo" => ["required"],
+            "nom" => ["required"],
+            "statut" => ["required"]
         ]);
 
-        Storage::disk("public")->delete("img/" .$testimonial->img);
-        $testimonial->titre = $request->titre;
-        $testimonial->img = $request->file("img")->hashName();
         $testimonial->description = $request->description;
+        if ($request->file('img') !== null) {
+            Storage::disk("public")->delete("img/" . $testimonial->photo);
+            $testimonial->photo= $request->file("img")->hashName();
+            $request->file("img")->storePublicly("img", "public");
+        }
+        $testimonial->nom = $request->nom;
+        $testimonial->statut = $request->statut;
         $testimonial->save();
-        $request->file("img")->storePublicly("img", "public");
         return redirect()->route('testimonials.index');
     }
 
@@ -98,7 +102,7 @@ class TestimonialController extends Controller
     {
         $this->authorize("delete", Testimonial::class);
 
-        Storage::disk("public")->delete("img/" .$testimonial->img1);
+        Storage::disk("public")->delete("img/" .$testimonial->photo);
         $testimonial->delete();
         return redirect()->route('testimonials.index');
     }

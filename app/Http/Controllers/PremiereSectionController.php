@@ -75,16 +75,11 @@ class PremiereSectionController extends Controller
         $this->authorize("update", PremiereSection::class);
 
         request()->validate([
-            "titre"=>["required"],
-            "description1"=>["required"],
-            "description2"=>["required"]
+            "chemin"=>["required"]
         ]);
         
-        $hero = new PremiereSection();
-        $hero->titre = $request->titre;
-        $hero->description1 = $request->description1;
-        $hero->description2 = $request->description2;
-        $hero->save();
+        $premiereSection->chemin = $request->chemin;
+        $premiereSection->save();
         return redirect('/');
     }
 
