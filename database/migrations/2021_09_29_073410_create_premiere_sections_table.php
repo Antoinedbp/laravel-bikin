@@ -15,6 +15,7 @@ class CreatePremiereSectionsTable extends Migration
     {
         Schema::create('premiere_sections', function (Blueprint $table) {
             $table->id();
+            $table->string('chemin');
             $table->timestamps();
         });
     }

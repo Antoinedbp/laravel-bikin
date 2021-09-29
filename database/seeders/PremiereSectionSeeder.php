@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PremiereSectionSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class PremiereSectionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('premiere_sections')->insert(
+            ['chemin'=>'get started']
+        );
     }
 }

@@ -15,6 +15,10 @@ class CreateDeuxiemeSectionsTable extends Migration
     {
         Schema::create('deuxieme_sections', function (Blueprint $table) {
             $table->id();
+            $table->string('chemin');
+            $table->string('logo');
+            $table->string('titre');
+            $table->string('description');
             $table->timestamps();
         });
     }
