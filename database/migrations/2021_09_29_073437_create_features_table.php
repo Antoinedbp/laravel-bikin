@@ -17,7 +17,7 @@ class CreateFeaturesTable extends Migration
             $table->id();
             $table->string("image");
             $table->string("titre");
-            $table->string("sous-titre");
+            $table->text("sous_titre");
             $table->string("description1");
             $table->string("description2");
             $table->string("description3");

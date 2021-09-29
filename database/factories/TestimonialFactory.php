@@ -22,7 +22,7 @@ class TestimonialFactory extends Factory
     public function definition()
     {
         return [
-            'description'=>$this->faker->paragraph(),
+            'description'=>$this->faker->sentence(),
             'photo'=>$this->faker->imageUrl(),
             'nom'=>$this->faker->name(),
             'statut'=>$this->faker->word()
