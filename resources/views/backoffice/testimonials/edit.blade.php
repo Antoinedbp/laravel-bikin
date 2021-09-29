@@ -8,8 +8,8 @@
         <form action="{{route('testimonials.update', $testimonials->id)}}" method="POST">
             @csrf
             @method('PUT')
-            Location: <input type="text" name="location" value="{{$testimonials->location}}">
-            Description de location: <input type="number" name="locaDescription" value="{{$testimonials->locaDescription}}">
+            description: <input type="text" name="description" value="{{$testimonials->location}}">
+            Photo: <input type="number" name="locaDescription" value="{{$testimonials->locaDescription}}">
             Email: <input type="text" name="email" value="{{$testimonials->email}}">
             Description email: <input type="text" name="emailDescription" value="{{$testimonials->emailDescription}}">
             call: <input type="text" name="call" value="{{$testimonials->call}}">
