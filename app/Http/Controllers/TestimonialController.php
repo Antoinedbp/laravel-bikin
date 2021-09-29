@@ -26,7 +26,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.testimonials.create');
     }
 
     /**
@@ -37,7 +37,23 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize("create", Testimonial::class);
+
+        $request->validate([
+            "description" => ["required"],
+            "photo" => ["required"],
+            "nom" => ["required"],
+            "statut" => ["required"]
+        ]);
+
+        $testimonial = new Testimonial;
+        $testimonial->description = $request->description;
+        $testimonial->photo = $request->file("img")->hashName();
+        $testimonial->nom = $request->nom;
+        $testimonial->statut = $request->statut;
+        $request->file("img")->storePublicly("img", "public");
+        $testimonial->save();
+        return redirect()->route('testimonials.index');
     }
 
     /**

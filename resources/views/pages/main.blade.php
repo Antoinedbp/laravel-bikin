@@ -1,4 +1,4 @@
-@extends('template.welcome')
+@extends('template.index')
 
 @section('content')
     @include('partials.heroSec')
