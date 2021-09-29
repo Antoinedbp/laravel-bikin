@@ -73,13 +73,14 @@ class ContactController extends Controller
         $this->authorize("update", Contact::class);
 
         request()->validate([
-            "text"=>["required", "min:1", "max:400"],
-            "bouton"=>["required", "min:1", "max:40"],
+            "adresse"=>["required"],
+            "phone"=>["required"],
+            "email"=>["required"]
         ]);
         
-        $contact = new Contact();
-        $contact->text = $request->text;
-        $contact->bouton = $request->bouton;
+        $contact->adresse = $request->adresse;
+        $contact->phone = $request->phone;
+        $contact->email = $request->email;
         $contact->save();
         return redirect('/');
     }

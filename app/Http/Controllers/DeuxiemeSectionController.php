@@ -75,16 +75,17 @@ class DeuxiemeSectionController extends Controller
         $this->authorize("update", DeuxiemeSection::class);
 
         request()->validate([
+            "chemin"=>["required"],
+            "logo"=>["required"],
             "titre"=>["required"],
-            "description1"=>["required"],
-            "description2"=>["required"]
+            "description"=>["required"]
         ]);
         
-        $abou = new DeuxiemeSection();
-        $abou->titre = $request->titre;
-        $abou->description1 = $request->description1;
-        $abou->description2 = $request->description2;
-        $abou->save();
+        $deuxiemeSection->chemin = $request->chemin;
+        $deuxiemeSection->logo = $request->logo;
+        $deuxiemeSection->titre = $request->titre;
+        $deuxiemeSection->description = $request->description;
+        $deuxiemeSection->save();
         return redirect('/');
     }
 

@@ -1,14 +1,5 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FeatureController;
-use App\Http\Controllers\FooterController;
-use App\Http\Controllers\NavbarController;
-use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\PremiereSectionController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TeamController;
-use Database\Seeders\FooterSeeder;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,18 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.main');
+    return view('welcome');
 });
 
-Route::get('/backoffice',[BackController::class, 'index'])->name('hombo');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::resource('/headers', NavbarController::class);
-Route::resource('/titres', TitreController::class);
-Route::resource('/heros', PremiereSectionController::class);
-Route::resource('/abouts', PremiereSectionController::class);
-Route::resource('/features', FeatureController::class);
-Route::resource('/services', ServiceController::class);
-Route::resource('/portfolios', PortfolioController::class);
-Route::resource('/teams', TeamController::class);
-Route::resource('/contacts', ContactController::class);
-Route::resource('/footers', FooterController::class);
+require __DIR__.'/auth.php';
