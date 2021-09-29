@@ -21,8 +21,7 @@ class TitreFactory extends Factory
      */
     public function definition()
     {
-        return [
-            
+        return [       
             "titre1"=>"Built Better Websites With Bikin",
             'description1'=>$this->faker->text(),
             "titre2"=>"Voluptatem dignissimos provident quasi",

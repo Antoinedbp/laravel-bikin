@@ -22,6 +22,9 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
+            'logo1'=>'bx bx-map',
+            'logo2'=>'bx bx-envelope',
+            'logo3'=>'bx bx-phone-call',
             'adresse'=>$this->faker->address(),
             'phone'=>$this->faker->phoneNumber(),
             'email'=>$this->faker->email()
