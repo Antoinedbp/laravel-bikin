@@ -14,7 +14,8 @@ class NavbarController extends Controller
      */
     public function index()
     {
-        //
+        $dataNav = Navbar::all();
+        return view('backoffice.header.all', compact('dataNav'));
     }
 
     /**
@@ -46,7 +47,7 @@ class NavbarController extends Controller
      */
     public function show(Navbar $navbar)
     {
-        //
+        return view('backoffice.header.show', compact('navbar'));
     }
 
     /**
@@ -57,7 +58,7 @@ class NavbarController extends Controller
      */
     public function edit(Navbar $navbar)
     {
-        //
+        return view('backoffice.header.edit', compact('navbar'));
     }
 
     /**
@@ -69,7 +70,16 @@ class NavbarController extends Controller
      */
     public function update(Request $request, Navbar $navbar)
     {
-        //
+        $this->authorize("update", Navbar::class);
+
+        request()->validate([
+            "chemin"=>["required"]
+        ]);
+        
+        $navbar = new Navbar();
+        $navbar->chemin = $request->chemin;
+        $navbar->save();
+        return redirect('/');
     }
 
     /**
@@ -80,6 +90,9 @@ class NavbarController extends Controller
      */
     public function destroy(Navbar $navbar)
     {
-        //
+        $this->authorize("delete", Navbar::class);
+
+        $navbar->delete();
+        return redirect()->back();
     }
 }

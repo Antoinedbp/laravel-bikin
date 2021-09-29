@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $dataService = Service::all();
+        return view('backoffice.services.all', compact('dataService'));
     }
 
     /**
@@ -46,7 +47,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('backoffice.services.show', compact('service'));
     }
 
     /**
@@ -57,7 +58,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('backoffice.services.edit', compact('service'));
     }
 
     /**
@@ -69,7 +70,18 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $this->authorize("update", Service::class);
+
+        request()->validate([
+            "text"=>["required", "min:1", "max:400"],
+            "bouton"=>["required", "min:1", "max:40"],
+        ]);
+        
+        $service = new Service();
+        $service->text = $request->text;
+        $service->bouton = $request->bouton;
+        $service->save();
+        return redirect('/');
     }
 
     /**
@@ -80,6 +92,9 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $this->authorize("delete", Service::class);
+
+        $service->delete();
+        return redirect()->back();
     }
 }

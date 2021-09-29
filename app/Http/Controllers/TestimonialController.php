@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
@@ -14,7 +15,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $dataTest = Testimonial::all();
+        return view('backoffice.testimonials.show', compact('dataTest'));
     }
 
     /**
@@ -46,7 +48,7 @@ class TestimonialController extends Controller
      */
     public function show(Testimonial $testimonial)
     {
-        //
+        return view('backoffice.testimonials.show', compact('testimonial'));
     }
 
     /**
@@ -57,7 +59,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
-        //
+        return view('backoffice.testimonials.edit', compact('testimonial'));
     }
 
     /**
@@ -69,7 +71,21 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
-        //
+        $this->authorize("update", Testimonial::class);
+
+        $request->validate([
+            "titre" => ["required"],
+            "url" => ["required"],
+            "description" => ["required"]
+        ]);
+
+        Storage::disk("public")->delete("img/" .$testimonial->img);
+        $testimonial->titre = $request->titre;
+        $testimonial->img = $request->file("img")->hashName();
+        $testimonial->description = $request->description;
+        $testimonial->save();
+        $request->file("img")->storePublicly("img", "public");
+        return redirect()->route('testimonials.index');
     }
 
     /**
@@ -80,6 +96,10 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        //
+        $this->authorize("delete", Testimonial::class);
+
+        Storage::disk("public")->delete("img/" .$testimonial->img1);
+        $testimonial->delete();
+        return redirect()->route('testimonials.index');
     }
 }

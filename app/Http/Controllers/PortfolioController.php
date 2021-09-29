@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
@@ -14,7 +15,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $dataPort = Portfolio::all();
+        return view('backoffice.portfolio.show', compact('dataPort'));
     }
 
     /**
@@ -46,7 +48,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        return view('backoffice.portfolio.show', compact('portfolio'));
     }
 
     /**
@@ -57,7 +59,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        return view('backoffice.portfolio.edit', compact('portfolio'));
     }
 
     /**
@@ -69,7 +71,21 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
-        //
+        $this->authorize("update", Portfolio::class);
+
+        $request->validate([
+            "titre" => ["required"],
+            "url" => ["required"],
+            "description" => ["required"]
+        ]);
+
+        Storage::disk("public")->delete("img/" .$portfolio->img);
+        $portfolio->titre = $request->titre;
+        $portfolio->img = $request->file("img")->hashName();
+        $portfolio->description = $request->description;
+        $portfolio->save();
+        $request->file("img")->storePublicly("img", "public");
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -80,6 +96,10 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        $this->authorize("delete", Portfolio::class);
+
+        Storage::disk("public")->delete("img/" .$portfolio->img1);
+        $portfolio->delete();
+        return redirect()->route('portfolios.index');
     }
 }
