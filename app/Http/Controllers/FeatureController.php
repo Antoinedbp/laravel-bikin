@@ -14,7 +14,8 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        //
+        $dataFeat = Feature::all();
+        return view('backoffice.features.all', compact('dataFeat'));
     }
 
     /**
@@ -46,7 +47,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
-        //
+        return view('backoffice.features.show', compact('feature'));
     }
 
     /**
@@ -57,7 +58,7 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-        //
+        return view('backoffice.features.edit', compact('feature'));
     }
 
     /**
@@ -69,7 +70,20 @@ class FeatureController extends Controller
      */
     public function update(Request $request, Feature $feature)
     {
-        //
+        $this->authorize("update", Feature::class);
+
+        request()->validate([
+            "titre"=>["required"],
+            "description1"=>["required"],
+            "description2"=>["required"]
+        ]);
+        
+        $feature = new Feature();
+        $feature->titre = $request->titre;
+        $feature->description1 = $request->description1;
+        $feature->description2 = $request->description2;
+        $feature->save();
+        return redirect('/');
     }
 
     /**
@@ -80,6 +94,9 @@ class FeatureController extends Controller
      */
     public function destroy(Feature $feature)
     {
-        //
+        $this->authorize("delete", Feature::class);
+
+        $feature->delete();
+        return redirect()->back();
     }
 }

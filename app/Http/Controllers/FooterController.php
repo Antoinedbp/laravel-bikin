@@ -14,7 +14,8 @@ class FooterController extends Controller
      */
     public function index()
     {
-        //
+        $dataFooter = Footer::all();
+        return view('backoffice.footer.all', compact('dataFooter'));
     }
 
     /**
@@ -46,7 +47,7 @@ class FooterController extends Controller
      */
     public function show(Footer $footer)
     {
-        //
+        return view('backoffice.footer.show', compact('footer'));
     }
 
     /**
@@ -57,7 +58,7 @@ class FooterController extends Controller
      */
     public function edit(Footer $footer)
     {
-        //
+        return view('backoffice.footer.edit', compact('footer'));
     }
 
     /**
@@ -69,7 +70,16 @@ class FooterController extends Controller
      */
     public function update(Request $request, Footer $footer)
     {
-        //
+        $this->authorize("update", Footer::class);
+
+        request()->validate([
+            "chemin"=>["required"],
+        ]);
+        
+        $footer = new Footer();
+        $footer->chemin = $request->chemin;
+        $footer->save();
+        return redirect('/');
     }
 
     /**
@@ -80,6 +90,9 @@ class FooterController extends Controller
      */
     public function destroy(Footer $footer)
     {
-        //
+        $this->authorize("delete", Footer::class);
+
+        $footer->delete();
+        return redirect()->back();
     }
 }

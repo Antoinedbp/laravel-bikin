@@ -14,7 +14,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $dataTeam = Team::all();
+        return view('backoffice.team.all', compact('dataTeam'));
     }
 
     /**
@@ -46,7 +47,8 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        return view('backoffice.team.show', compact('team'));
+
     }
 
     /**
@@ -57,7 +59,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        return view('backoffice.team.edit', compact('team'));
     }
 
     /**
@@ -69,7 +71,18 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $this->authorize("update", Team::class);
+
+        request()->validate([
+            "titre"=>["required"],
+            "description"=>["required"]
+        ]);
+        
+        $team = new Team();
+        $team->titre = $request->titre;
+        $team->description = $request->description;
+        $team->save();
+        return redirect('/');
     }
 
     /**
@@ -80,6 +93,9 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $this->authorize("delete", Team::class);
+
+        $team->delete();
+        return redirect()->back();
     }
 }
