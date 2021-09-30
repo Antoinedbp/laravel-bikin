@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>{{ $titres->titre2 }}</h2>
-        <p>{{ $titres->description2 }}</p>
+        <h2>{{ $titres->titre8 }}</h2>
+        <p>{{ $titres->description8 }}</p>
       </div>
 
       <div class="row">
