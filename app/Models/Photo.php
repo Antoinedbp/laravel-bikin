@@ -9,6 +9,11 @@ class Photo extends Model
 {
     use HasFactory;
 
+    protected $table = "portfolios";
+
+    protected $fillable = [
+        "nom"
+    ];
     public function portfolios() {
         return $this->hasMany(portfolios::class);
     }

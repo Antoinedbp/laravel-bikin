@@ -3,8 +3,8 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Features</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <h2>{{ $titres->titre3 }}</h2>
+        <p>{{ $titres->description3 }}</p>
       </div>
 
       <div class="row content">
@@ -12,15 +12,14 @@
           <img src="assets/img/features-1.png" class="img-fluid" alt="">
         </div>
         <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <h3>{{ $features->titre }}</h3>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            {{ $features->sous_titre }}
           </p>
           <ul>
-            <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
+            <li><i class="bi bi-check"></i> {{ $features->description1 }}</li>
+            <li><i class="bi bi-check"></i> {{ $features->description2 }}</li>
+            <li><i class="bi bi-check"></i> {{ $features->description3 }}</li>
           </ul>
         </div>
       </div>

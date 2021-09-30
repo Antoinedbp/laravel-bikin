@@ -30,8 +30,6 @@ class PortfolioFactory extends Factory
         return 
   
         [
-           
-            
             "image"=>"portfolio-1.jpg",
             "photo_id"=>$this->faker->numberBetween(1, count(Photo::all())),
             

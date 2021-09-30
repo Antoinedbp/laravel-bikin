@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DeuxiemeSection;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class DeuxiemeSectionController extends Controller
 {
