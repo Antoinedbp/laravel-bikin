@@ -10,7 +10,7 @@
     </div>
     <div class="globaleProduct">
         
-        @foreach ($dataHeader as $item)
+        @foreach ($dataNav as $item)
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
