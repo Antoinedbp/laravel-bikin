@@ -25,7 +25,7 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.features.create');
     }
 
     /**

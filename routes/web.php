@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\TitreController;
 use App\Http\Controllers\ContactController;
