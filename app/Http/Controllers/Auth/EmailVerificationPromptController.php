@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as RoutingController;
 
-class EmailVerificationPromptController extends Controller
+class EmailVerificationPromptController extends RoutingController
 {
     /**
      * Display the email verification prompt.

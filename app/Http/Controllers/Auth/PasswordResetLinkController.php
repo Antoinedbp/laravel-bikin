@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as RoutingController;
 use Illuminate\Support\Facades\Password;
 
-class PasswordResetLinkController extends Controller
+class PasswordResetLinkController extends RoutingController
 {
     /**
      * Display the password reset link request view.

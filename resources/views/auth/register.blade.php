@@ -11,7 +11,7 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
+            <x-input id="name" class="block mt-1 w-full" type="text" name="role_id" :value="3" required autofocus hidden />
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />
