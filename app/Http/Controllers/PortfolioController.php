@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Team;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class TeamController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $dataTeam = Team::all();
-        return view('backoffice.team.all', compact('dataTeam'));
+        $dataPort = Portfolio::all(); 
+        return view('backoffice.portfolio.all', compact('dataPort'));
     }
 
     /**
@@ -43,65 +43,59 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show(Portfolio $portfolio)
     {
-        return view('backoffice.team.show', compact('team'));
-
+        return view('backoffice.portfolio.show', compact('portfolio'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(Portfolio $portfolio)
     {
-        return view('backoffice.team.edit', compact('team'));
+        return view('backoffice.portfolio.show', compact('portfolio'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, Portfolio $portfolio)
     {
-        $this->authorize("update", Team::class);
+        $this->authorize("update", Portfolio::class);
 
-        request()->validate([
-            "photo"=>["required"],
-            "nom"=>["required"],
-            "statut"=>["required"]
+        $request->validate([
+            "image" => ["required"],
+            "photo_id" => ["required"]
         ]);
-        
+
         if ($request->file('img') !== null) {
-            Storage::disk("public")->delete("img/" . $team->photo);
-            $team->photo= $request->file("img")->hashName();
+            Storage::disk("public")->delete("img/" . $portfolio->photo);
+            $portfolio->photo= $request->file("img")->hashName();
             $request->file("img")->storePublicly("img", "public");
         }
-        $team->nom = $request->nom;
-        $team->statut = $request->statut;
-        $team->save();
-        return redirect('/');
+        $portfolio->photo_id = $request->photo_id;
+        $portfolio->save();
+        return redirect()->route('portfolios.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(Portfolio $portfolio)
     {
-        $this->authorize("delete", Team::class);
-
-        $team->delete();
-        return redirect()->back();
+        //
     }
 }
