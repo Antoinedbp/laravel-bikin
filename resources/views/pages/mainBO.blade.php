@@ -26,20 +26,20 @@
       </div>
       <div class="col-6 contact">
         <h3 class="text-center">Modification STEAK</h3>
-        <a href="{{route('steaks.index')}}">
-          <button class="btn btn-danger"type="submit">DIRECTION STEAK</button>
+        <a href="{{route('features.index')}}">
+          <button class="btn btn-danger"type="submit">DIRECTION FEATURES</button>
         </a>
       </div>
       <div class="col-6 portfolio">
-          <h3 class="text-center">Modification CHEFS</h3>
-          <a href="{{route('chefs.index')}}">
-            <button class="btn btn-danger"type="submit">DIRECTION CHEFS</button>
+          <h3 class="text-center">Modification SERVICES</h3>
+          <a href="{{route('services.index')}}">
+            <button class="btn btn-danger"type="submit">DIRECTION SERVICES</button>
           </a>
       </div>
       <div class="col-6 skills">
-          <h3 class="text-center">Modification CUSTOMERS</h3>
-          <a href="{{route('customers.index')}}"> 
-            <button class="btn btn-danger"type="submit">DIRECTION CUSTOMERS</button>
+          <h3 class="text-center">Modification PORTFOLIOS</h3>
+          <a href="{{route('portfolios.index')}}"> 
+            <button class="btn btn-danger"type="submit">DIRECTION PORTFOLIOS</button>
           </a>
       </div>
     </div>
