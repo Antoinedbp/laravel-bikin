@@ -14,6 +14,7 @@ use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\Titre;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class HomeController extends Controller
 {
@@ -24,17 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $titres = Titre::all();
+        $titres = Titre::first();
         $headers = Navbar::all();
         $heros = PremiereSection::all();
         $abouts = DeuxiemeSection::all();
-        $features = Feature::all();
-        $services = Service::all();
+        $features = Feature::first();
+        $services = Service::first();
         $portfolios = Portfolio::all();
         $testimonials = Testimonial::all();
         $teams = Team::all();
-        $contacts = Contact::all();
-        $footers = Footer::all();
+        $contacts = Contact::first();
+        $footers = Footer::first();
         return view('pages.main', compact('titres', 'headers', 'heros', 'abouts', 'features', 'services', 'portfolios', 'testimonials', 'teams', 'contacts', 'footers'));
     }
 

@@ -23,7 +23,7 @@ class TeamFactory extends Factory
     {
         return [
             
-           'photo'=>$this->faker->imageUrl(),
+           'photo'=>$this->faker->imageUrl($width=296, $height=296),
             'nom'=>$this->faker->name(),
             'statut'=>$this->faker->word()
         ];

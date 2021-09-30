@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DeuxiemeSectionController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PremiereSectionController;
 use App\Http\Controllers\ServiceController;
@@ -24,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.main');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/backoffice',[BackController::class, 'index'])->name('hombo');
 

@@ -14,25 +14,23 @@ class NavbarSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('navbars')->insert([[
-            'chemin'=>'Home'
+        DB::table('navbars')->insert([
+        [
+            'chemin'=>'about'
         ],
         [
-            'chemin'=>'About'
+            'chemin'=>'services'
         ],
         [
-            'chemin'=>'Services'
+            'chemin'=>'portfolio'
         ],
         [
-            'chemin'=>'Portfolio'
+            'chemin'=>'team'
         ],
         [
-            'chemin'=>'Team'
+            'chemin'=>'contact'
         ],
-        [
-            'chemin'=>'Contact'
-        ],
-        ['chemin'=>'Get Started'
+        ['chemin'=>'getstarted'
          ]]);
     }
 }
