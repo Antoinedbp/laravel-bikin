@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TitreSeeder extends Seeder
+class PhotoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,10 @@ class TitreSeeder extends Seeder
      */
     public function run()
     {
-        
+        DB::table('photos')->insert([
+            ["nom" => "App"],
+            ["nom" => "Web"],
+            ["nom" => "Card"],
+        ]);
     }
 }

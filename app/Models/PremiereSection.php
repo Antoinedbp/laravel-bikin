@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PremiereSection extends Model
 {
     use HasFactory;
+
+    protected $table = "premiere_sections";
+
+    protected $fillable = [
+        "chemin"
+    ];
 }

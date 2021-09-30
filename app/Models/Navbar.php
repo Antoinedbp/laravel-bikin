@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Navbar extends Model
 {
     use HasFactory;
+
+    
+    protected $table = "navbars";
+
+    protected $fillable = [
+        "chemin"
+    ];
 }

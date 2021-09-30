@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DeuxiemeSection extends Model
+class Role extends Model
 {
     use HasFactory;
 
-    protected $table = "deuxieme_sections";
+    protected $table = "roles";
 
     protected $fillable = [
-        "chemin",
-        "logo",
-        "titre",
-        "description"
+        "nom"
     ];
+    public function users() {
+        return $this->hasMany(User::class);
+    }
 }
