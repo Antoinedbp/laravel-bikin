@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\DeuxiemeSection;
 use App\Models\Footer;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -31,6 +33,21 @@ class DatabaseSeeder extends Seeder
             PremiereSectionSeeder::class,
             PhotoSeeder::class,
             RoleSeeder::class,
+        ]);
+
+        DB::table('users')->insert([
+            "name" => "Antoine",
+            "email" => "antoinedebassompierre@hotmail.com",
+            "password" => Hash::make('testtest'),
+            "role_id" => 1,
+            "created_at" => now()
+        ]);
+        DB::table('users')->insert([
+            "name" => "Jean",
+            "email" => "jeandeborsu@email.com",
+            "password" => Hash::make('testtest'),
+            "role_id" => 1,
+            "created_at" => now()
         ]);
     }
 }
