@@ -11,10 +11,8 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div>
-            {{-- <x-label for="role_id" :value="__('Role_id')" />
-            <x-input id="role_id" class="block mt-1 w-full" type="text" name="role_id" :value="old('role_id')"  required  /> --}}
-            </div>
+            
+          
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />
@@ -47,7 +45,9 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
-
+            <div>
+                <x-input id="role_id" class="block mt-1 w-full" type="number" name="role_id" :value="old('role_id')"  required />
+            </div>
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
