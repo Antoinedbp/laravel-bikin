@@ -12,8 +12,8 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div>
-            <x-label for="role_id" :value="__('Role_id')" />
-            <x-input id="role_id" class="block mt-1 w-full" type="integer" name="role_id" :value="old('role_id')"  required  />
+            {{-- <x-label for="role_id" :value="__('Role_id')" />
+            <x-input id="role_id" class="block mt-1 w-full" type="text" name="role_id" :value="old('role_id')"  required  /> --}}
             </div>
             <!-- Name -->
             <div>
