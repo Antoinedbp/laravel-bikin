@@ -26,6 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/nav.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Bikin - v4.3.0
