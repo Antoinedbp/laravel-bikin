@@ -19,40 +19,75 @@
          <span class="tooltip">Dashboard</span>
       </li>
       <li>
-       <a href="#">
+        <a href="{{route('titres.index')}}">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Titres</span>
+        </a>
+        <span class="tooltip">Titres</span>
+      </li>
+      <li>
+        <a href="{{route('headers.index')}}">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Header</span>
+        </a>
+        <span class="tooltip">Header</span>
+      </li>
+      <li>
+       <a href="{{route('abouts.index')}}">
          <i class='bx bx-user' ></i>
-         <span class="links_name">User</span>
+         <span class="links_name">About</span>
        </a>
-       <span class="tooltip">User</span>
+       <span class="tooltip">About</span>
      </li>
      <li>
-       <a href="#">
+       <a href="{{route('features.index')}}">
          <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
+         <span class="links_name">Features</span>
        </a>
-       <span class="tooltip">Messages</span>
+       <span class="tooltip">Features</span>
      </li>
      <li>
-       <a href="#">
+       <a href="{{route('services.index')}}">
          <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Analytics</span>
+         <span class="links_name">Services</span>
        </a>
-       <span class="tooltip">Analytics</span>
+       <span class="tooltip">Services</span>
      </li>
      <li>
-       <a href="#">
+       <a href="{{route('portfolios.index')}}">
          <i class='bx bx-folder' ></i>
-         <span class="links_name">File Manager</span>
+         <span class="links_name">Portfolios</span>
        </a>
-       <span class="tooltip">Files</span>
+       <span class="tooltip">Portfolios</span>
      </li>
      <li>
-       <a href="#">
+       <a href="{{route('testimonials.index')}}">
          <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
+         <span class="links_name">Testimonials</span>
        </a>
-       <span class="tooltip">Order</span>
+       <span class="tooltip">Testimonials</span>
      </li>
+     <li>
+      <a href="{{route('teams.index')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Teams</span>
+      </a>
+      <span class="tooltip">Teams</span>
+    </li>
+    <li>
+      <a href="{{route('contacts.index')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Contact</span>
+      </a>
+      <span class="tooltip">Contact</span>
+    </li>
+    <li>
+      <a href="{{route('footers.index')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Footer</span>
+      </a>
+      <span class="tooltip">Footer</span>
+    </li>
      <li>
        <a href="#">
          <i class='bx bx-heart' ></i>
