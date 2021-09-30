@@ -2,6 +2,15 @@
 
 @section('contentBO')
     <form action="{{route('testimonials.store')}}" method="POST">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         @csrf
         <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Description</label>

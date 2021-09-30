@@ -6,6 +6,15 @@
     <br>
     @can('create', \App\Models\Features::class)
         <form action="{{route('features.update', $features->id)}}" method="POST">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             @csrf
             @method('PUT')
             Location: <input type="text" name="location" value="{{$features->location}}">

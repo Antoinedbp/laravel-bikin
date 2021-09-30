@@ -6,6 +6,15 @@
     <br>
     @can('create', \App\Models\Testimonial::class)
         <form action="{{route('testimonials.update', $testimonials->id)}}" method="POST">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             @csrf
             @method('PUT')
             description: <input type="text" name="description" value="{{$testimonials->location}}">

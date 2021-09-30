@@ -6,6 +6,15 @@
     <br>
     @can('create', \App\Models\Footer::class)
         <form action="{{route('footers.update', $footers->id)}}" method="POST">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             @csrf
             @method('PUT')
             Location: <input type="text" name="location" value="{{$footers->location}}">
