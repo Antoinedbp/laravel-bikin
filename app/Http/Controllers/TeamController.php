@@ -26,7 +26,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.team.create');
     }
 
     /**
@@ -37,7 +37,21 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->authorize("update", Team::class);
+
+        request()->validate([
+            "photo"=>["required"],
+            "nom"=>["required"],
+            "statut"=>["required"]
+        ]);
+        
+        $team = new Team();
+        $team->photo = $request->file('img')->hashName();
+        $request->file('img')->storePublicly('img', 'public');
+        $team->nom = $request->nom;
+        $team->statut = $request->statut;
+        $team->save();
+        return redirect('/');
     }
 
     /**

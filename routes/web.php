@@ -31,17 +31,17 @@ Route::get('/', function () {
 
 Route::get('/backoffice',[BackController::class, 'index'])->name('hombo');
 
-Route::resource('/titres', TitreController::class);
-Route::resource('/headers', NavbarController::class);
-Route::resource('/heros', PremiereSectionController::class);
-Route::resource('/abouts', DeuxiemeSectionController::class);
-Route::resource('/features', FeatureController::class);
-Route::resource('/services', ServiceController::class);
-Route::resource('/portfolios', PortfolioController::class);
-Route::resource('/testimonials', TestimonialController::class);
-Route::resource('/teams', TeamController::class);
-Route::resource('/contacts', ContactController::class);
-Route::resource('/footers', FooterController::class);
+Route::resource('/titres', TitreController::class)->middleware('auth', 'admin');
+Route::resource('/headers', NavbarController::class)->middleware('auth', 'admin');
+Route::resource('/heros', PremiereSectionController::class)->middleware('auth', 'admin');
+Route::resource('/abouts', DeuxiemeSectionController::class)->middleware('auth', 'admin');
+Route::resource('/features', FeatureController::class)->middleware('auth', 'admin');
+Route::resource('/services', ServiceController::class)->middleware('auth', 'admin');
+Route::resource('/portfolios', PortfolioController::class)->middleware('auth', 'admin');
+Route::resource('/testimonials', TestimonialController::class)->middleware('auth', 'admin');
+Route::resource('/teams', TeamController::class)->middleware('auth', 'admin');
+Route::resource('/contacts', ContactController::class)->middleware('auth', 'admin');
+Route::resource('/footers', FooterController::class)->middleware('auth', 'admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
