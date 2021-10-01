@@ -25,7 +25,7 @@ class TestimonialFactory extends Factory
             'description'=>$this->faker->sentence(),
             'photo'=>$this->faker->imageUrl($width = 90, $height = 90),
             'nom'=>$this->faker->name(),
-            'statut'=>$this->faker->word()
+            'statut'=>$this->faker->word(),
         ];
     }
 }
