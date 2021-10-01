@@ -8,7 +8,7 @@
           <button class="monBtn2" type="submit">Retour backoffice</button>
       </a>
     </div>
-    <div class="globaleProduct">
+    <div class="globaleProduct ml-5">
         
         @foreach ($dataTitre as $item)
 

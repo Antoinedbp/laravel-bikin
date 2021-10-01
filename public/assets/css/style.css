@@ -490,11 +490,11 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: #466393;
+  background: #fff;
   background-size: cover;
   padding: 60px 0;
   position: relative;
-  color: #fff;
+  color: black;
 }
 
 .about .content {
