@@ -7,6 +7,8 @@
             About
             </div>
             <div class="card-body">
+                <p class="card-text">{{$abouts->chemin}}</p>
+                <p class="card-text">{{$abouts->logo}}</p>
                 <h5 class="card-title">{{$abouts->titre}}</h5>
                 <p class="card-text">{{$abouts->description}}</p>
                 <div class="d-flex justify-content-center">
