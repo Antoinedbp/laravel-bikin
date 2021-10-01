@@ -1613,7 +1613,9 @@ form{
     display: flex;
     flex-direction: column;
     width: 20%;
-    margin-left: 5rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
 }
 
 .btnS{
@@ -1746,5 +1748,13 @@ button{
   background-color: blue;
   color: white;
   width: 3.5rem;
+}
+
+.btnShow{
+  border-radius: 5px;
+  background-color: yellow;
+  color: black;
+  width: 4.5rem;
+  margin-left: 2px;
 }
 

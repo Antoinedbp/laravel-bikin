@@ -1,17 +1,18 @@
 @extends('template.back')
 
 @section('contentBO')
-    <div class="card" style="width: 18rem;">
+<div class="container d-flex align-items-center justify-content-center">
+    <div class="card text-center mt-4 w-75">
+        <div class="card-header">
+          Titres
+        </div>
         <div class="card-body">
-            <h4>#{{$portfolios->id}}</h4>
-            <h3 class="card-title">{{$portfolios->titre}}</h3>
-            <h3 class="card-title">{{$portfolios->description}}</h3>
-            <form action="{{route('portfolios.destroy', $portfolios->id)}}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">DELETE</button>
+            <h5 class="card-title">{{$portfolios->titre}}</h5>
+            <p class="card-text">{{$portfolios->description}}</p>
+            <div class="d-flex justify-content-center">
                 <a href="{{route('portfolios.edit', $portfolios->id)}}" class="btn btn-info">EDIT</a>
-            </form>
+            </div>
         </div>
     </div>
+</div>
 @endsection

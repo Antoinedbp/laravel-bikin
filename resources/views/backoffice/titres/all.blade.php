@@ -41,6 +41,9 @@
                   <th scope="col">#</th>
                   <th scope="col">Titre</th>
                   <th scope="col">Description</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Show</th>
+                  <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -48,22 +51,30 @@
                   <th scope="row">{{$item->id}}</th>
                   <td>{{$item->titre}}</td>
                   <td>{{$item->description}}</td>
+                  <td>
+                    <a href="{{route('titres.edit', $item->id)}}">
+                      <button class="btnEd" type="submit">
+                        EDIT
+                      </button>
+                    </a>
+                  </td>
+                  <td>
+                    <a href="{{route('titres.show', $item->id)}}">
+                      <button class="btnShow" type="submit">
+                          SHOW
+                      </button>
+                    </a>
+                  </td>
+                  <td>
+                    <form action="{{route('titres.destroy', $item->id)}}" method="post">
+                      @csrf
+                          @method('DELETE')
+                          <button class="btnDel" type="submit">DELETE</button>
+                    </form>
+                  </td>
                 </tr>
               </tbody>
             </table>
-
-            <div class="buttonDelEd">
-              <form action="{{route('titres.destroy', $item->id)}}" method="post">
-                @csrf
-                    @method('DELETE')
-                    <button class="btnDel" type="submit">DELETE</button>
-              </form>
-              <a href="{{route('titres.edit', $item->id)}}">
-                <button class="btnEd" type="submit">
-                    EDIT
-                </button>
-              </a>
-            </div>
           @endforeach
       </div>
     </div>
