@@ -22,13 +22,19 @@ class PortfolioFactory extends Factory
      * @return array
      */
     
+    public function incrementer(){
+        
+        for($x = 0; $x<=9; $x++){
+            $solution = $x;
+        }
+        $resolution = "portfolio-".$solution."jpg";
+        return $resolution;
+    }
     public function definition()
     {   
        
-       
-        $x =1;
         return [
-            "image"=> "portfolio-".$x++.".jpg",
+            "image"=> $this->incrementer() ,
             "photo_id"=>$this->faker->numberBetween(1, count(Photo::all())),
             
         ];

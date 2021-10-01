@@ -44,7 +44,8 @@ class AuthenticatedSessionController extends RoutingController
      */
     public function destroy(Request $request)
     {
-        Auth::guard('web')->Auth::logout();
+        
+        Auth::logout();
 
         $request->session()->invalidate();
 
