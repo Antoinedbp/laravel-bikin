@@ -1,11 +1,11 @@
 
-  <div class="sidebar">
+  <div class="sidebar" style="padding: 0">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
         <div class="logo_name">CodingLab</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
-    <ul class="nav-list">
+    <ul class="nav-list" style="overflow: auto; padding-right: 0.5rem; padding-left: 0">
       <li>
           <i class='bx bx-search' ></i>
          <input type="text" placeholder="Search...">
@@ -18,13 +18,7 @@
         </a>
          <span class="tooltip">Dashboard</span>
       </li>
-      <li>
-        <a href="{{route('titres.index')}}">
-          <i class='bx bx-user' ></i>
-          <span class="links_name">Titres</span>
-        </a>
-        <span class="tooltip">Titres</span>
-      </li>
+      
       <li>
         <a href="{{route('headers.index')}}">
           <i class='bx bx-user' ></i>
@@ -67,6 +61,7 @@
        </a>
        <span class="tooltip">Testimonials</span>
      </li>
+     
      <li>
       <a href="{{route('teams.index')}}">
         <i class='bx bx-cart-alt' ></i>
@@ -88,13 +83,22 @@
       </a>
       <span class="tooltip">Footer</span>
     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">Saved</span>
-       </a>
-       <span class="tooltip">Saved</span>
-     </li>
+    <li style="display: flex">
+       
+      <!-- Authentication -->
+      
+      <form style=" margin-left:0; width:100%" method="POST" action="{{ route('logout') }}">
+        
+          @csrf
+          <x-dropdown-link style="width: 100%; padding-left: 0 !important;" :href="route('logout')"
+                  onclick="event.preventDefault();
+                              this.closest('form').submit();">
+                              <i class='bx bx-log-out' ></i>
+              <span class="links_name">Log Out</span>
+          </x-dropdown-link>
+        </form>
+   </li>
+    
      <li>
        <a href="#">
          <i class='bx bx-cog' ></i>
@@ -102,16 +106,15 @@
        </a>
        <span class="tooltip">Setting</span>
      </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg">
-           <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
-           </div>
-         </div>
-         <i class='bx bx-log-out' id="log_out" ></i> 
-     </li>
+    
+
+        
+        
+          
+      
+          
+        
+
     </ul>
   </div>
   <script>

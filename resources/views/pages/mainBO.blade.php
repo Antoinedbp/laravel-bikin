@@ -3,8 +3,8 @@
 @section('contentBO')
 
   <h1 class="title_home">BACKOFFICE HOME</h1>
-  <div class="globaleHome" >
-    <div class="row globale2">
+  <div class="globaleHome container " >
+    <div class="row " >
 
       <div class="col-6 skills">
         <h3 class="text-center">Modification TITRES</h3>

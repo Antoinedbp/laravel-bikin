@@ -22,15 +22,13 @@ class PortfolioFactory extends Factory
      * @return array
      */
     
+    
     public function definition()
     {   
-       
-       
-        
-        return 
-  
-        [
-            "image"=>"portfolio-1.jpg",
+       static $i = 0;
+       $i++;
+        return [
+            "image"=>  "portfolio-".$i.".jpg",
             "photo_id"=>$this->faker->numberBetween(1, count(Photo::all())),
             
         ];
