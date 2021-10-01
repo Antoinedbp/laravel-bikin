@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Testimonial::factory(7)->create();
         \App\Models\Team::factory(4)->create();
         \App\Models\Contact::factory(1)->create();
-        \App\Models\Service::factory(1)->create();
         \App\Models\Portfolio::factory(9)->create();
         
         $this->call([
@@ -32,6 +31,7 @@ class DatabaseSeeder extends Seeder
             PhotoSeeder::class,
             RoleSeeder::class,
             FooterSeeder::class,
+            ServiceSeeder::class
         ]);
         \App\Models\User::factory(10)->create();
         
