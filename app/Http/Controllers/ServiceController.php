@@ -40,33 +40,15 @@ class ServiceController extends Controller
         $this->authorize("create", Service::class);
 
         request()->validate([
-            "logo1"=>["required"],
-            "titre1"=>["required"],
-            "description1"=>["required"],
-            "logo2"=>["required"],
-            "titre2"=>["required"],
-            "description2"=>["required"],
-            "logo3"=>["required"],
-            "titre3"=>["required"],
-            "description3"=>["required"],
-            "logo4"=>["required"],
-            "titre4"=>["required"],
-            "description4"=>["required"]
+            "logo"=>["required"],
+            "titre"=>["required"],
+            "description"=>["required"]
         ]);
         
         $service = new Service();
-        $service->logo1 = $request->logo1;
-        $service->titre1 = $request->titre1;
-        $service->description1 = $request->description1;
-        $service->logo2 = $request->logo2;
-        $service->titre2 = $request->titre2;
-        $service->description2 = $request->description2;
-        $service->logo3 = $request->logo3;
-        $service->titre3 = $request->titre3;
-        $service->description3 = $request->description3;
-        $service->logo4 = $request->logo4;
-        $service->titre4 = $request->titre4;
-        $service->description4 = $request->description4;
+        $service->logo = $request->logo;
+        $service->titre = $request->titre;
+        $service->description = $request->description;
         $service->save();
         return redirect('/');
     }
@@ -105,32 +87,14 @@ class ServiceController extends Controller
         $this->authorize("update", Service::class);
 
         request()->validate([
-            "logo1"=>["required"],
-            "titre1"=>["required"],
-            "description1"=>["required"],
-            "logo2"=>["required"],
-            "titre2"=>["required"],
-            "description2"=>["required"],
-            "logo3"=>["required"],
-            "titre3"=>["required"],
-            "description3"=>["required"],
-            "logo4"=>["required"],
-            "titre4"=>["required"],
-            "description4"=>["required"]
+            "logo"=>["required"],
+            "titre"=>["required"],
+            "description"=>["required"]
         ]);
         
-        $service->logo1 = $request->logo1;
-        $service->titre1 = $request->titre1;
-        $service->description1 = $request->description1;
-        $service->logo2 = $request->logo2;
-        $service->titre2 = $request->titre2;
-        $service->description2 = $request->description2;
-        $service->logo3 = $request->logo3;
-        $service->titre3 = $request->titre3;
-        $service->description3 = $request->description3;
-        $service->logo4 = $request->logo4;
-        $service->titre4 = $request->titre4;
-        $service->description4 = $request->description4;
+        $service->logo = $request->logo;
+        $service->titre = $request->titre;
+        $service->description = $request->description;
         $service->save();
         return redirect('/');
     }
