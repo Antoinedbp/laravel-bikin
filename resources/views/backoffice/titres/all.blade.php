@@ -13,28 +13,6 @@
           
           @foreach ($dataTitre as $item)
 
-          {{-- <div class="row">
-              <div class="col-lg-4" data-aos="fade-right">
-                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                <p class="font-italic">
-                  Titre: {{$item->titre}}
-                </p>
-                <p>
-                  Description: {{$item->description}}
-                </p> 
-              </div>
-            </div>
-
-            <div class="buttonDelEd">
-              <a href="{{route('titres.edit', $item->id)}}">
-                <button class="btnEd" type="submit">
-                    EDIT
-                </button>
-              </a>
-            </div> --}}
-
             <table class="table">
               <thead>
                 <tr>
@@ -75,6 +53,7 @@
                 </tr>
               </tbody>
             </table>
+            
           @endforeach
       </div>
     </div>
