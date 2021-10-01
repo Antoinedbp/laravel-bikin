@@ -1,11 +1,11 @@
 
-  <div class="sidebar">
+  <div class="sidebar" style="padding: 0">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
         <div class="logo_name">CodingLab</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
-    <ul class="nav-list" style="overflow: auto">
+    <ul class="nav-list" style="overflow: auto; padding-right: 0.5rem; padding-left: 0">
       <li>
           <i class='bx bx-search' ></i>
          <input type="text" placeholder="Search...">
@@ -90,7 +90,7 @@
       <form style=" margin-left:0; width:100%" method="POST" action="{{ route('logout') }}">
         
           @csrf
-          <x-dropdown-link style="width: 100%" :href="route('logout')"
+          <x-dropdown-link style="width: 100%; padding-left: 0 !important;" :href="route('logout')"
                   onclick="event.preventDefault();
                               this.closest('form').submit();">
                               <i class='bx bx-log-out' ></i>

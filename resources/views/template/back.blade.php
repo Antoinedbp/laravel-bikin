@@ -24,7 +24,7 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-  {{-- <!-- Favicons -->
+  <!-- Favicons -->
   <link href="{{asset('img/favicon.png')}}" rel="icon">
   <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
@@ -37,7 +37,7 @@
   <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet"> --}}
+  <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -84,6 +84,14 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
+    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   
   </body>
   

@@ -3,8 +3,8 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>{{ $titres->titre3 }}</h2>
-        <p>{{ $titres->description3 }}</p>
+        <h2>{{ $titres->titre }}</h2>
+        <p>{{ $titres->description }}</p>
       </div>
 
       <div class="row content">

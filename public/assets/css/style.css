@@ -1589,7 +1589,7 @@ section {
   border-radius: 50px;
 }
 
-.about{
+.abouti{
   border: 2px dotted red;
   padding:15%;
   display: flex;
@@ -1613,7 +1613,9 @@ form{
     display: flex;
     flex-direction: column;
     width: 20%;
-    margin-left: 5rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
 }
 
 .btnS{
@@ -1639,7 +1641,7 @@ form{
   width: inherit;
 }
 
-.contact{
+.contacte{
   border: 2px dotted red;
   padding:15%;
   display: flex;
@@ -1735,13 +1737,24 @@ button{
 }
 
 .btnDel{
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: red;
   color: white;
+  width: 4.5rem;
 }
 
 .btnEd{
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: blue;
   color: white;
+  width: 3.5rem;
 }
+
+.btnShow{
+  border-radius: 5px;
+  background-color: yellow;
+  color: black;
+  width: 4.5rem;
+  margin-left: 2px;
+}
+

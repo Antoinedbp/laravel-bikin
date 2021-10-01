@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>{{ $titres->titre8 }}</h2>
-        <p>{{ $titres->description8 }}</p>
+        <h2>{{ $titres->titre }}</h2>
+        <p>{{ $titres->description }}</p>
       </div>
 
       <div class="row">
@@ -47,10 +47,10 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
               </div>
             </div>
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 w-100">
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
             </div>
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 w-100">
               <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
             <div class="my-3">

@@ -17,8 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
-        \App\Models\Titre::factory(1)->create();
         \App\Models\Feature::factory(4)->create();
         \App\Models\Testimonial::factory(7)->create();
         \App\Models\Team::factory(4)->create();
@@ -27,15 +25,16 @@ class DatabaseSeeder extends Seeder
         
         
         $this->call([
+            TitreSeeder::class,
             DeuxiemeSectionSeeder::class,
-            FooterSeeder::class,
             NavbarSeeder::class,
             PremiereSectionSeeder::class,
             PhotoSeeder::class,
             RoleSeeder::class,
+            FooterSeeder::class,
         ]);
         \App\Models\User::factory(10)->create();
-        \App\Models\Portfolio::factory(9)->create();
+        
         DB::table('users')->insert([
             "name" => "Antoine",
             "email" => "antoinedebassompierre@hotmail.com",

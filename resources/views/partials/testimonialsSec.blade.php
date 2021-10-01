@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>{{ $titres->titre6 }}</h2>
-        <p>{{ $titres->description6 }}</p>
+        <h2>{{ $titres->titre }}</h2>
+        <p>{{ $titres->description }}</p>
       </div>
 
       <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">

@@ -7,7 +7,7 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Bikin</h3>
-            <p>
+            <p style="padding: 0; margin:0">
               {{ $footers->adresse }} <br><br>
               <strong>Phone:</strong> {{ $footers->phone }}<br>
               <strong>Email:</strong> {{ $footers->email }}<br>
@@ -38,8 +38,8 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>{{ $footers->titre }}</h4>
-            <p>{{ $footers->description }}</p>
-            <form action="" method="post">
+            <p style="padding: 0; margin:0">{{ $footers->description }}</p>
+            <form style="width: 100%; margin-left:0" action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>

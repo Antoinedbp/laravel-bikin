@@ -50,7 +50,7 @@ class AuthenticatedSessionController extends RoutingController
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
+        
         return redirect('/');
     }
 }
