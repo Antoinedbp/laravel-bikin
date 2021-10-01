@@ -7,6 +7,7 @@
           Services
         </div>
         <div class="card-body">
+            <div class="icon"><i class="{{ $services->logo }}"></i></div>
             <h5 class="card-title">{{$services->titre}}</h5>
             <p class="card-text">{{$services->description}}</p>
             <div class="d-flex justify-content-center">

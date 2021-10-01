@@ -25,18 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $titres = Titre::first();
+        $titres = Titre::all();
         $headers = Navbar::all();
         $heros = PremiereSection::all();
         $abouts = DeuxiemeSection::all();
         $features = Feature::first();
         $services = Service::first();
+        $servicee = Service::all();
         $portfolios = Portfolio::all();
         $testimonials = Testimonial::all();
         $teams = Team::all();
         $contacts = Contact::first();
         $footers = Footer::first();
-        return view('pages.main', compact('titres', 'headers', 'heros', 'abouts', 'features', 'services', 'portfolios', 'testimonials', 'teams', 'contacts', 'footers'));
+        return view('pages.main', compact('titres', 'headers', 'heros', 'abouts', 'features', 'services', 'servicee', 'portfolios', 'testimonials', 'teams', 'contacts', 'footers'));
     }
 
     /**
