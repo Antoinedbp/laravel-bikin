@@ -1741,6 +1741,7 @@ button{
   background-color: red;
   color: white;
   width: 4.5rem;
+  height: 2.5rem;
 }
 
 .btnEd{
@@ -1748,6 +1749,7 @@ button{
   background-color: blue;
   color: white;
   width: 3.5rem;
+  height: 2.5rem;
 }
 
 .btnShow{
@@ -1756,5 +1758,6 @@ button{
   color: black;
   width: 4.5rem;
   margin-left: 2px;
+  height: 2.5rem;
 }
 
