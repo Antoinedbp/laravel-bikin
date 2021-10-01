@@ -60,13 +60,6 @@
          <span class="links_name">Testimonials</span>
        </a>
        <span class="tooltip">Testimonials</span>
-       <li>
-          <i class='bx bx-cart-alt' ></i>
-          <span class="links_name">Teams</span>
-        </a>
-        <span class="tooltip">Teams</span>
-      </li>
-      
      </li>
      
      <li>

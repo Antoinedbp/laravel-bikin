@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-lg-6 mt-4 mt-md-0">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form style="width: 100%" action="forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
