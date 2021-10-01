@@ -17,7 +17,15 @@
           @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block d-flex">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                    <form style=" margin-left:1; width:100%" method="POST" action="{{ route('logout') }}">
+        
+                        @csrf
+                        <x-dropdown-link style="width: 100%; padding-left: 0 !important;" :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            <span class="links_name">Log Out</span>
+                        </x-dropdown-link>
+                    </form>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
