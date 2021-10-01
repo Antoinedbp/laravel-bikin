@@ -12,21 +12,7 @@ class Titre extends Model
     protected $table = "titres";
 
     protected $fillable = [
-        "titre1",
-        "description1",
-        "titre2",
-        "description2",
-        "titre3",
-        "description3",
-        "titre4",
-        "description4",
-        "titre5",
-        "description5",
-        "titre6",
-        "description6",
-        "titre7",
-        "description7",
-        "titre8",
-        "description8",
+        "titre",
+        "description"
     ];
 }

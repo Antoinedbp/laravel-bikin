@@ -18,14 +18,14 @@
           <button class="btn btn-danger"type="submit">DIRECTION HEADER</button>
         </a>
       </div>
-      <div class="col-6 about">
+      <div class="col-6 abouti">
         <h3 class="text-center">Modification ABOUT</h3>
         <a href="{{route('abouts.index')}}">
         <button class="btn btn-danger"type="submit">DIRECTION ABOUT</button>
         </a>
       </div>
-      <div class="col-6 contact">
-        <h3 class="text-center">Modification STEAK</h3>
+      <div class="col-6 contacte">
+        <h3 class="text-center">Modification FEATURES</h3>
         <a href="{{route('features.index')}}">
           <button class="btn btn-danger"type="submit">DIRECTION FEATURES</button>
         </a>

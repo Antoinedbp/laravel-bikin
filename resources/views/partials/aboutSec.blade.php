@@ -5,9 +5,10 @@
       <div class="row no-gutters">
         <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
           <div class="content">
-            <h3>{{ $titres->titre2 }}</h3>
+
+            <h3>{{ $titres->titre }}</h3>
             <p>
-              {{ $titres->description2 }}
+              {{ $titres->description }}
             </p>
             <a href="#" class="about-btn">{{ $abouts[0]->chemin }}<i class="bx bx-chevron-right"></i></a>
           </div>
@@ -17,7 +18,7 @@
             <div class="row">
               @foreach ($abouts as $item)
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <i class={{ $item->log }}></i>
+                <i class={{ $item->logo }}></i>
                 <h4>{{ $item->titre }}</h4>
                 <p>{{ $item->description }}</p>
               </div>

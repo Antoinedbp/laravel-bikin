@@ -27,6 +27,11 @@
           </div>
 
           <div class="buttonDelEd">
+            <form action="{{route('deleteBlog', $item->id)}}" method="post">
+              @csrf
+                  @method('DELETE')
+                  <button class="btnDel" type="submit">DELETE</button>
+            </form>
             <a href="{{route('headers.edit', $item->id)}}">
               <button class="btnEd" type="submit">
                   EDIT

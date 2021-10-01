@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DeuxiemeSection;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -15,8 +16,9 @@ class DeuxiemeSectionController extends Controller
      */
     public function index()
     {
+        $titres = Titre::all();
         $dataAbout = DeuxiemeSection::all();
-        return view('backoffice.about.all', compact('dataAbout'));
+        return view('backoffice.about.all', compact('dataAbout', 'titres'));
     }
 
     /**

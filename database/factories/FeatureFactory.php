@@ -23,7 +23,7 @@ class FeatureFactory extends Factory
     {
         return [
             'image'=>$this->faker->imageUrl(),
-            'titre'=>$this->faker->word(),
+            'titre'=>$this->faker->sentence(),
             'sous_titre'=>$this->faker->paragraph(),
             'description1'=>$this->faker->sentence(),
             'description2'=>$this->faker->sentence(),

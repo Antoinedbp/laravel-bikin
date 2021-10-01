@@ -490,11 +490,11 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: #fff;
+  background: #466393;
   background-size: cover;
   padding: 60px 0;
   position: relative;
-  color: black;
+  color: #fff;
 }
 
 .about .content {
@@ -1589,7 +1589,7 @@ section {
   border-radius: 50px;
 }
 
-.about{
+.abouti{
   border: 2px dotted red;
   padding:15%;
   display: flex;
@@ -1639,7 +1639,7 @@ form{
   width: inherit;
 }
 
-.contact{
+.contacte{
   border: 2px dotted red;
   padding:15%;
   display: flex;
@@ -1741,7 +1741,9 @@ button{
 }
 
 .btnEd{
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: blue;
   color: white;
+  width: 3.5rem;
 }
+
