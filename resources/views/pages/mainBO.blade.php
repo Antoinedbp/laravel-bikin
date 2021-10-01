@@ -30,7 +30,7 @@
           <button class="btn btn-danger"type="submit">DIRECTION FEATURES</button>
         </a>
       </div>
-      <div class="col-6 portfolio">
+      <div class="col-6 portfolios">
           <h3 class="text-center">Modification SERVICES</h3>
           <a href="{{route('services.index')}}">
             <button class="btn btn-danger"type="submit">DIRECTION SERVICES</button>

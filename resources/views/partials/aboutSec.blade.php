@@ -6,9 +6,9 @@
         <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
           <div class="content">
 
-            <h3>{{ $titres->titre }}</h3>
+            <h3>{{ $titres[1]->titre }}</h3>
             <p>
-              {{ $titres->description }}
+              {{ $titres[1]->description }}
             </p>
             <a href="#" class="about-btn">{{ $abouts[0]->chemin }}<i class="bx bx-chevron-right"></i></a>
           </div>
