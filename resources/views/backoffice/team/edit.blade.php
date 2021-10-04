@@ -1,11 +1,10 @@
 @extends('template.back')
 
 @section('contentBO')
-
-    <h1>Modifier Team</h1>
+<h1 class="text-center">Modifier Team</h1>
     <br>
-    @can('create', \App\Models\Team::class)
-        <form action="{{route('teams.update', $teams->id)}}" method="POST">
+  
+        <form class="container" action="{{route('teams.update', $team->id)}}" method="POST">
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -17,15 +16,11 @@
         @endif
             @csrf
             @method('PUT')
-            Location: <input type="text" name="location" value="{{$teams->location}}">
-            Description de location: <input type="number" name="locaDescription" value="{{$teams->locaDescription}}">
-            Email: <input type="text" name="email" value="{{$teams->email}}">
-            Description email: <input type="text" name="emailDescription" value="{{$teams->emailDescription}}">
-            call: <input type="text" name="call" value="{{$teams->call}}">
-            Description call: <input type="text" name="callDescription" value="{{$teams->callDescription}}">
-            Source: <input type="text" name="src" value="{{$teams->src}}">
+            logo: <input type="text" name="logo" value="{{$team->photo}}">
+            titre: <input type="text" name="titre" value="{{$team->nom}}">
+            description: <input type="text" name="description" value="{{$team->statut}}">
         </form>
-    @endcan
+    
 
 @endsection
 

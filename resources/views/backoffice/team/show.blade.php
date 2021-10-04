@@ -7,10 +7,11 @@
           Titres
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{$teams->titre}}</h5>
-            <p class="card-text">{{$teams->description}}</p>
+            <h5 class="card-title">{{$team->nom}}</h5>
+            <p class="card-text">{{$team->photo}}</p>
+            <p class="card-text">{{$team->statut}}</p>
             <div class="d-flex justify-content-center">
-                <a href="{{route('teams.edit', $teams->id)}}" class="btn btn-info">EDIT</a>
+                <a href="{{route('teams.edit', $team->id)}}" class="btn btn-info">EDIT</a>
             </div>
         </div>
     </div>
