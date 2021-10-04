@@ -7,9 +7,9 @@
             Heros
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{$heros->titre}}</h5>
+                <h5 class="card-title">{{$hero->chemin}}</h5>
                 <div class="d-flex justify-content-center">
-                    <a href="{{route('heros.edit', $heros->id)}}" class="btn btn-info">EDIT</a>
+                    <a href="{{route('heros.edit', $hero->id)}}" class="btn btn-info">EDIT</a>
                 </div>
             </div>
         </div>

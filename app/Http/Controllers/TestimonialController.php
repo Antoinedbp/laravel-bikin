@@ -17,7 +17,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $dataTest = Testimonial::all();
-        return view('backoffice.testimonials.show', compact('dataTest'));
+        return view('backoffice.testimonials.all', compact('dataTest'));
     }
 
     /**

@@ -15,7 +15,7 @@ class FooterController extends Controller
      */
     public function index()
     {
-        $dataFooter = Footer::all();
+        $dataFooter = Footer::first();
         return view('backoffice.footer.all', compact('dataFooter'));
     }
 

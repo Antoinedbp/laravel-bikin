@@ -2,10 +2,10 @@
 
 @section('contentBO')
 
-    <h1>Modifier Features</h1>
+    <h1 class="w-100 text-center">Modifier Features</h1>
     <br>
-    @can('create', \App\Models\Features::class)
-        <form action="{{route('features.update', $features->id)}}" method="POST">
+
+        <form class="container" action="{{route('features.update', $feature->id)}}" method="POST">
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -17,15 +17,15 @@
         @endif
             @csrf
             @method('PUT')
-            Location: <input type="text" name="location" value="{{$features->location}}">
-            Description de location: <input type="number" name="locaDescription" value="{{$features->locaDescription}}">
-            Email: <input type="text" name="email" value="{{$features->email}}">
-            Description email: <input type="text" name="emailDescription" value="{{$features->emailDescription}}">
-            call: <input type="text" name="call" value="{{$features->call}}">
-            Description call: <input type="text" name="callDescription" value="{{$features->callDescription}}">
-            Source: <input type="text" name="src" value="{{$features->src}}">
+            image: <input type="text" name="image" value="{{$feature->image}}">
+            titre: <input type="text" name="titre" value="{{$feature->titre}}">
+            sous_titre: <input type="text" name="sous_titre" value="{{$feature->sous_titre}}">
+            description1: <input type="text" name="description1" value="{{$feature->description1}}">
+            description2: <input type="text" name="description2" value="{{$feature->description2}}">
+            description3: <input type="text" name="description3" value="{{$feature->description3}}">
+          
         </form>
-    @endcan
+
 
 @endsection
 

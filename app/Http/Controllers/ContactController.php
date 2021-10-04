@@ -59,7 +59,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        return view('backoffice.contact.show', compact('contact'));
+        return view('backoffice.contact.edit', compact('contact'));
     }
 
     /**

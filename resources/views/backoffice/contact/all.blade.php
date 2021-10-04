@@ -1,14 +1,15 @@
 @extends('template.back')
 
 @section('contentBO')
+
     <h1 class="titresBO">PARTIE CONTACT</h1>
 
-    <div class="buttonsBO">
-      <a href="{{route('hombo')}}" class="aBtn">
+   
+      <a href="{{route('hombo')}}" class=" text-center" style="margin-left:45%">
           <button class="monBtn2" type="submit">Retour backoffice</button>
       </a>
-    </div>
-    <div class="globaleProduct">
+    
+    <div class="globaleProduct container">
         
         @foreach ($dataContact as $item)
 
@@ -30,7 +31,7 @@
             <tbody>
               <tr>
                 <th scope="row">{{$item->id}}</th>
-                <td><img src="{{$item->adresse}}" alt=""></td>
+                <td>{{$item->adresse}}</td>
                 <td>{{$item->phone}}</td>
                 <td>{{$item->email}}</td>
                 <td>{{$item->logo1}}</td>

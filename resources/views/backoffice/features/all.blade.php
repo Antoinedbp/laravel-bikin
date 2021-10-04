@@ -1,6 +1,7 @@
 @extends('template.back')
 
 @section('contentBO')
+
     <h1 class="titresBO">PARTIE FEATURES</h1>
 
     <div class="buttonsBO">
@@ -10,15 +11,16 @@
     </div>
     <div class="globaleProduct">
         
-        @foreach ($dataFeat as $item)
+       
 
-        <table class="table">
+        <table class="table container">
           <thead>
+           
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">Id</th>
               <th scope="col">Image</th>
               <th scope="col">Titre</th>
-              <th scope="col">Sous-Titre</th>
+              <th scope="col">Sous_titre</th>
               <th scope="col">Description1</th>
               <th scope="col">Description2</th>
               <th scope="col">Description3</th>
@@ -28,9 +30,10 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($dataFeat as $item)
             <tr>
               <th scope="row">{{$item->id}}</th>
-              <td><img src="{{$item->image}}" alt=""></td>
+              <td><img height="30px" width="30px" src="{{$item->image}}" alt=""></td>
               <td>{{$item->titre}}</td>
               <td>{{$item->sous_titre}}</td>
               <td>{{$item->description1}}</td>
@@ -58,10 +61,11 @@
                 </form>
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
 
-        @endforeach
+      
     </div>
 
 @endsection

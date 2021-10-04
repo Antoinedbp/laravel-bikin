@@ -7,10 +7,14 @@
             Contacts
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{$contacts->titre}}</h5>
-                <p class="card-text">{{$contacts->description}}</p>
+                <h5 class="card-title">{{$contact->phone}}</h5>
+                <p class="card-text">{{$contact->adresse}}</p>
+                <p class="card-text">{{$contact->email}}</p>
+                <p class="card-text">{{$contact->logo1}}</p>
+                <p class="card-text">{{$contact->logo2}}</p>
+                <p class="card-text">{{$contact->logo3}}</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{{route('contacts.edit', $contacts->id)}}" class="btn btn-info">EDIT</a>
+                    <a href="{{route('contacts.edit', $contact->id)}}" class="btn btn-info">EDIT</a>
                 </div>
             </div>
         </div>
