@@ -59,6 +59,7 @@ class TitreController extends Controller
      */
     public function edit(Titre $titre)
     {
+        
         return view('backoffice.titres.edit', compact('titre'));
     }
 
@@ -71,7 +72,8 @@ class TitreController extends Controller
      */
     public function update(Request $request, Titre $titre)
     {
-        $this->authorize("update", Titre::class);
+        
+        // $this->authorize("update", Titre::class);
 
         request()->validate([
             "titre"=>["required"],
@@ -92,7 +94,7 @@ class TitreController extends Controller
      */
     public function destroy(Titre $titre)
     {
-        $this->authorize("delete", Titre::class);
+        // $this->authorize("delete", Titre::class);
 
         $titre->delete();
         return redirect()->back();
