@@ -21,9 +21,11 @@ class TestimonialFactory extends Factory
      */
     public function definition()
     {
+        static $i = 0;
+        $i++;
         return [
             'description'=>$this->faker->sentence(),
-            'photo'=>$this->faker->imageUrl($height=90, $width=90),  
+            'photo'=>"testimonials-".$i.".jpg",  
             'nom'=>$this->faker->name(),
             'statut'=>$this->faker->word(),
         ];

@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\Feature::factory(4)->create();
-        \App\Models\Testimonial::factory(7)->create();
+        \App\Models\Testimonial::factory(5)->create();
         \App\Models\Team::factory(4)->create();
         \App\Models\Contact::factory(1)->create();
        
@@ -56,5 +56,6 @@ class DatabaseSeeder extends Seeder
             "role_id" => 2,
             "created_at" => now()
         ]);
+       
     }
 }

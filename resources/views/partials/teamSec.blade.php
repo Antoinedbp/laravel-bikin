@@ -11,7 +11,7 @@
         @foreach ($teams as $item)
         <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="member">
-            <img src="{{ $item->photo }}" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/team/'.$item->photo)  }}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
                 <h4>{{ $item->nom }}</h4>

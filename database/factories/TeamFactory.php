@@ -21,9 +21,11 @@ class TeamFactory extends Factory
      */
     public function definition()
     {
+        static $i = 0;
+        $i++;
         return [
             
-           'photo'=>$this->faker->imageUrl($width=296, $height=296),
+           'photo'=>"team-".$i.".jpg",
             'nom'=>$this->faker->name(),
             'statut'=>$this->faker->word()
         ];

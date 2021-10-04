@@ -17,7 +17,7 @@
                 {{ $item->description }}
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <img style="width: 100px; height:100px" src="{{ $item->photo }}" class="testimonial-img" alt="">
+              <img style="width: 100px; height:100px" src="{{ asset('assets/img/testimonials/'.$item->photo) }}" class="testimonial-img" alt="">
               <h3>{{ $item->nom }}</h3>
               <h4>{{ $item->statut }}</h4>
             </div>

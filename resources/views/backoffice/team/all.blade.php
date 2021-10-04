@@ -35,7 +35,7 @@
               @foreach ($dataTeam as $item)
               <tr>
                 <th scope="row">{{$item->id}}</th>
-                <td><img  src="{{$item->photo}}" alt=""></td>
+                <td><img height="30px" width="30px"  src="{{asset('assets/img/team/'.$item->photo) }}" alt=""></td>
                 <td>{{$item->nom}}</td>
                 <td>{{$item->statut}}</td>
                 @can('edit')
