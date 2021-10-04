@@ -7,11 +7,11 @@
           Services
         </div>
         <div class="card-body">
-            <div class="icon"><i class="{{ $services->logo }}"></i></div>
-            <h5 class="card-title">{{$services->titre}}</h5>
-            <p class="card-text">{{$services->description}}</p>
+            <div class="icon"><i class="{{ $service->logo }}"></i></div>
+            <h5 class="card-title">{{$service->titre}}</h5>
+            <p class="card-text">{{$service->description}}</p>
             <div class="d-flex justify-content-center">
-                <a href="{{route('services.edit', $services->id)}}" class="btn btn-info">EDIT</a>
+                <a href="{{route('services.edit', $service->id)}}" class="btn btn-info">EDIT</a>
             </div>
         </div>
     </div>

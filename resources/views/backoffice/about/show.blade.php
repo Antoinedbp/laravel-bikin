@@ -7,13 +7,13 @@
             About
             </div>
             <div class="card-body">
-                <p class="card-text">{{$abouts->chemin}}</p>
-                <p class="card-text">{{$abouts->logo}}</p>
-                <h5 class="card-title">{{$abouts->titre}}</h5>
-                <p class="card-text">{{$abouts->description}}</p>
-                <div class="d-flex justify-content-center">
-                    <a href="{{route('abouts.edit', $abouts->id)}}" class="btn btn-info">EDIT</a>
-                </div>
+                <p class="card-text">{{$about->chemin}}</p>
+                <p class="card-text">{{$about->logo}}</p>
+                <h5 class="card-title">{{$about->titre}}</h5>
+                <p class="card-text">{{$about->description}}</p>
+                {{-- <div class="d-flex justify-content-center">
+                    <a href="{{route('abouts.edit', $about->id)}}" class="btn btn-info">EDIT</a>
+                </div> --}}
             </div>
         </div>
     </div>

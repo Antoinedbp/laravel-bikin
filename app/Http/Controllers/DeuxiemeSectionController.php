@@ -60,9 +60,9 @@ class DeuxiemeSectionController extends Controller
      * @param  \App\Models\DeuxiemeSection  $deuxiemeSection
      * @return \Illuminate\Http\Response
      */
-    public function edit(DeuxiemeSection $deuxiemeSection)
+    public function edit($id)
     {
-        $about = $deuxiemeSection;
+        $about = DeuxiemeSection::find($id);
         return view('backoffice.about.edit', compact('about'));
     }
 
@@ -75,7 +75,7 @@ class DeuxiemeSectionController extends Controller
      */
     public function update(Request $request, DeuxiemeSection $deuxiemeSection)
     {
-        $this->authorize("update", DeuxiemeSection::class);
+        // $this->authorize("update", DeuxiemeSection::class);
 
         request()->validate([
             "chemin"=>["required"],
@@ -98,11 +98,11 @@ class DeuxiemeSectionController extends Controller
      * @param  \App\Models\DeuxiemeSection  $deuxiemeSection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DeuxiemeSection $deuxiemeSection)
+    public function destroy($id)
     {
-        $this->authorize("delete", DeuxiemeSection::class);
+        // $this->authorize("delete", DeuxiemeSection::class);
 
-        $about = $deuxiemeSection;
+        $about = DeuxiemeSection::find($id);
         $about->delete();
         return redirect()->back();
     }

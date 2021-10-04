@@ -7,10 +7,9 @@
           Headers
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{$headers->titre}}</h5>
-            <p class="card-text">{{$headers->description}}</p>
+            <h5 class="card-title">{{$header->chemin}}</h5>
             <div class="d-flex justify-content-center">
-                <a href="{{route('headers.edit', $headers->id)}}" class="btn btn-info">EDIT</a>
+                <a href="{{route('headers.edit', $header->id)}}" class="btn btn-info">EDIT</a>
             </div>
         </div>
     </div>

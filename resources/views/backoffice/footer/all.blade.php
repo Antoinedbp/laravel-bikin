@@ -5,11 +5,11 @@
 <div class="container">
   <h1 class="titresBO">Footer</h1>
 
-  <div class="buttonsBO">
-    <a href="{{route('hombo')}}" class="aBtn">
+  
+    <a href="{{route('hombo')}}" class="aBtn ml-4">
         <button class="monBtn2" type="submit">Retour backoffice</button>
     </a>
-  </div>
+ 
   <div class=" ml-5">
       
 
@@ -22,7 +22,17 @@
               <th scope="col">linkTitre1</th>
               <th scope="col">linkTitre2</th>
               <th scope="col">link1</th>
-              <th scope="col">phone</th>
+              <th scope="col">link2</th>
+              <th scope="col">link3</th>
+              <th scope="col">link4</th>
+              <th scope="col">link5</th>
+              <th scope="col">link6</th>
+              <th scope="col">link7</th>
+              <th scope="col">link8</th>
+              <th scope="col">link9</th>
+              <th scope="col">link10</th>
+              <th scope="col">Description</th>
+              <th scope="col">Titre</th>
               <th scope="col">Edit</th>
               <th scope="col">Show</th>
               <th scope="col">Delete</th>
@@ -32,10 +42,26 @@
           <tbody>
            
             <tr>
-              <th scope="row">{{$dataHero[0]->chemin}}</th>
+              <th scope="row">{{$dataFooter->adresse}}</th>
+              <th scope="row">{{$dataFooter->phone}}</th>
+              <th scope="row">{{$dataFooter->email}}</th>
+              <th scope="row">{{$dataFooter->linkTitre1}}</th>
+              <th scope="row">{{$dataFooter->linkTitre2}}</th>
+              <th scope="row">{{$dataFooter->link1}}</th>
+              <th scope="row">{{$dataFooter->link2}}</th>
+              <th scope="row">{{$dataFooter->link3}}</th>
+              <th scope="row">{{$dataFooter->link4}}</th>
+              <th scope="row">{{$dataFooter->link5}}</th>
+              <th scope="row">{{$dataFooter->link6}}</th>
+              <th scope="row">{{$dataFooter->link7}}</th>
+              <th scope="row">{{$dataFooter->link8}}</th>
+              <th scope="row">{{$dataFooter->link9}}</th>
+              <th scope="row">{{$dataFooter->link10}}</th>
+              <th scope="row">{{$dataFooter->description}}</th>
+              <th scope="row">{{$dataFooter->titre}}</th>
               <td>
                
-                <a href="{{route('heros.edit', $dataHero[0]->id)}}">
+                <a href="{{route('footers.edit', $dataFooter->id)}}">
                   <button class="btnEd" type="submit">
                     EDIT
                   </button>
@@ -43,14 +69,14 @@
                
               </td>
               <td>
-                <a href="{{route('heros.show', $dataHero[0]->id)}}">
+                <a href="{{route('footers.show', $dataFooter->id)}}">
                   <button class="btnShow" type="submit">
                       SHOW
                   </button>
                 </a>
               </td>
               <td>
-                <form action="{{route('heros.destroy', $dataHero[0]->id)}}" method="post">
+                <form action="{{route('footers.destroy', $dataFooter->id)}}" method="post">
                   @csrf
                       @method('DELETE')
                       <button class="btnDel" type="submit">DELETE</button>
@@ -65,63 +91,6 @@
   </div>
 </div>
 
-    <h1 class="titresBO">PARTIE FOOTER</h1>
-
-    <div class="buttonsBO">
-      <a href="{{route('hombo')}}" class="aBtn">
-          <button class="monBtn2" type="submit">Retour backoffice</button>
-      </a>
-    </div>
-    <div class="globaleProduct">
-        
-        @foreach ($dataFooter as $item)
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Description</th>
-              <th scope="col">Image</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Statut</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Show</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">{{$item->id}}</th>
-              <td>{{$item->description}}</td>
-              <td><img src="{{$item->photo}}" alt=""></td>
-              <td>{{$item->nom}}</td>
-              <td>{{$item->statut}}</td>
-              <td>
-                <a href="{{route('testimonials.edit', $item->id)}}">
-                  <button class="btnEd" type="submit">
-                    EDIT
-                  </button>
-                </a>
-              </td>
-              <td>
-                <a href="{{route('testimonials.show', $item->id)}}">
-                  <button class="btnShow" type="submit">
-                      SHOW
-                  </button>
-                </a>
-              </td>
-              <td>
-                <form action="{{route('testimonials.destroy', $item->id)}}" method="post">
-                  @csrf
-                      @method('DELETE')
-                      <button class="btnDel" type="submit">DELETE</button>
-                </form>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        @endforeach
-    </div>
+   
 
 @endsection

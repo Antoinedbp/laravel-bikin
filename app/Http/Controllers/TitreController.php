@@ -72,6 +72,14 @@ class TitreController extends Controller
      */
     public function update(Request $request, Titre $titre)
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        
+        // $this->authorize("update", Titre::class);
+>>>>>>> 44e99763b368b40aa2af894e1f29b631543fbc7d
+>>>>>>> 549c8438f3e6af0c5755cfa8cb5ef3d69d3420dd
 
         request()->validate([
             "titre"=>["required"],

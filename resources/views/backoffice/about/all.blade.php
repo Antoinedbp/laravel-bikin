@@ -3,16 +3,14 @@
 @section('contentBO')
     <h1 class="titresBO">PARTIE ABOUT</h1>
 
-    <div class="buttonsBO">
-      <a href="{{route('hombo')}}" class="aBtn">
-          <button class="monBtn2" type="submit">Retour backoffice</button>
-      </a>
-    </div>
+    <a href="{{route('hombo')}}" class=" text-center" style="margin-left:45%">
+      <button class="monBtn2" type="submit">Retour backoffice</button>
+  </a>
     <div class="globaleProduct">
         
-        @foreach ($dataAbout as $item)
+       
 
-        <table class="table">
+        <table class="table container">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -26,6 +24,7 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($dataAbout as $item)
             <tr>
               <th scope="row">{{$item->id}}</th>
               <td>{{$item->chemin}}</td>
@@ -54,10 +53,11 @@
                 </form>
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
 
-        @endforeach
+       
     </div>
 
 @endsection
