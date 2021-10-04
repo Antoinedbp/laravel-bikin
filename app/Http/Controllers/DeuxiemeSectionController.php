@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DeuxiemeSection;
 use App\Models\Titre;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class DeuxiemeSectionController extends Controller
 {
@@ -50,6 +50,8 @@ class DeuxiemeSectionController extends Controller
      */
     public function show(DeuxiemeSection $deuxiemeSection)
     {
+        $this->authorize('edit');
+
         $about = $deuxiemeSection;
         return view('backoffice.about.show', compact('about'));
     }
@@ -62,6 +64,8 @@ class DeuxiemeSectionController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('edit');
+
         $about = DeuxiemeSection::find($id);
         return view('backoffice.about.edit', compact('about'));
     }
@@ -75,7 +79,8 @@ class DeuxiemeSectionController extends Controller
      */
     public function update(Request $request, DeuxiemeSection $deuxiemeSection)
     {
-        // $this->authorize("update", DeuxiemeSection::class);
+        
+        $this->authorize("update", DeuxiemeSection::class);
 
         request()->validate([
             "chemin"=>["required"],
@@ -100,7 +105,7 @@ class DeuxiemeSectionController extends Controller
      */
     public function destroy($id)
     {
-        // $this->authorize("delete", DeuxiemeSection::class);
+        $this->authorize("delete", DeuxiemeSection::class);
 
         $about = DeuxiemeSection::find($id);
         $about->delete();

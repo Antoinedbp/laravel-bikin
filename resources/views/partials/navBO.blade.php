@@ -27,6 +27,13 @@
         <span class="tooltip">Header</span>
       </li>
       <li>
+        <a href="{{route('titres.index')}}">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Titres</span>
+        </a>
+        <span class="tooltip">Titres</span>
+      </li>
+      <li>
         <a href="{{route('heros.index')}}">
           <i class='bx bx-user' ></i>
           <span class="links_name">Heros</span>

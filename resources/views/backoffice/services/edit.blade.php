@@ -20,6 +20,7 @@
             logo: <input type="text" name="logo" value="{{$service->logo}}">
             titre: <input type="text" name="titre" value="{{$service->titre}}">
             description: <input type="text" name="description" value="{{$service->description}}">
+            <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>
         </form>
     
 

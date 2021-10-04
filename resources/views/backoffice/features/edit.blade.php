@@ -23,7 +23,7 @@
             description1: <input type="text" name="description1" value="{{$feature->description1}}">
             description2: <input type="text" name="description2" value="{{$feature->description2}}">
             description3: <input type="text" name="description3" value="{{$feature->description3}}">
-          
+            <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>
         </form>
 
 

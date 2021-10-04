@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Footer;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class FooterController extends Controller
 {
@@ -48,6 +48,7 @@ class FooterController extends Controller
      */
     public function show(Footer $footer)
     {
+        $this->authorize('edit');
         return view('backoffice.footer.show', compact('footer'));
     }
 
@@ -59,6 +60,7 @@ class FooterController extends Controller
      */
     public function edit(Footer $footer)
     {
+        $this->authorize('edit');
         return view('backoffice.footer.edit', compact('footer'));
     }
 

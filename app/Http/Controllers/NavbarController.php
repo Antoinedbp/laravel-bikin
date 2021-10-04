@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Navbar;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class NavbarController extends Controller
 {
@@ -15,6 +15,7 @@ class NavbarController extends Controller
      */
     public function index()
     {
+        
         $dataNav = Navbar::all();
         return view('backoffice.header.all', compact('dataNav'));
     }
@@ -48,6 +49,7 @@ class NavbarController extends Controller
      */
     public function show(Navbar $navbar)
     {
+        $this->authorize('edit');
         return view('backoffice.header.show', compact('navbar'));
     }
 
@@ -59,6 +61,7 @@ class NavbarController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('edit');
         $navbar=Navbar::find($id);
         return view('backoffice.header.edit', compact('navbar'));
     }
@@ -72,7 +75,7 @@ class NavbarController extends Controller
      */
     public function update(Request $request, Navbar $navbar)
     {
-        // $this->authorize("update", Navbar::class);
+        $this->authorize("update", Navbar::class);
 
         request()->validate([
             "chemin"=>["required"]
@@ -91,7 +94,7 @@ class NavbarController extends Controller
      */
     public function destroy($id)
     {
-        // $this->authorize("delete", Navbar::class);
+        $this->authorize("delete", Navbar::class);
         $navbar=Navbar::find($id);
         $navbar->delete();
         return redirect()->back();

@@ -24,6 +24,7 @@
             call: <input type="text" name="call" value="{{$portfolios->call}}">
             Description call: <input type="text" name="callDescription" value="{{$portfolios->callDescription}}">
             Source: <input type="text" name="src" value="{{$portfolios->src}}">
+            <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>
         </form>
     @endcan
 

@@ -25,7 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('titre-edit', function($user, $titre){
+        Gate::define('edit', function($user){
            
              return $user->role_id == 1;
 

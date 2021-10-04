@@ -19,9 +19,13 @@
                   <th scope="col">#</th>
                   <th scope="col">Titre</th>
                   <th scope="col">Description</th>
+                  @can('edit')
                   <th scope="col">Edit</th>
+                 
                   <th scope="col">Show</th>
+                  @endcan
                   <th scope="col">Delete</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -29,15 +33,17 @@
                   <th scope="row">{{$item->id}}</th>
                   <td>{{$item->titre}}</td>
                   <td>{{$item->description}}</td>
+                  @can('edit')
                   <td>
-                    @can('titre-edit', $item) 
+                     
                     <a href="{{route('titres.edit', $item->id)}}">
                       <button class="btnEd" type="submit">
                         EDIT
                       </button>
                     </a>
-                    @endcan
+                    
                   </td>
+                  
                   <td>
                     <a href="{{route('titres.show', $item->id)}}">
                       <button class="btnShow" type="submit">
@@ -45,6 +51,7 @@
                       </button>
                     </a>
                   </td>
+                  @endcan
                   <td>
                     @can('titre-delete', $item)
                       <form action="{{route('titres.destroy', $item->id)}}" method="post">
@@ -54,6 +61,7 @@
                       </form>
                     @endcan
                   </td>
+                 
                 </tr>
               </tbody>
             </table>

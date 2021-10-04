@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
@@ -61,6 +61,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
+        $this->authorize('edit');
         return view('backoffice.services.show', compact('service'));
     }
 
@@ -72,6 +73,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+        $this->authorize('edit');
         return view('backoffice.services.edit', compact('service'));
     }
 

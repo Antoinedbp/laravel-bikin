@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PremiereSection;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class PremiereSectionController extends Controller
 {
@@ -48,6 +48,8 @@ class PremiereSectionController extends Controller
      */
     public function show(PremiereSection $premiereSection)
     {
+        $this->authorize('edit');
+
         $hero = $premiereSection;
         return view('backoffice.hero.show', compact('hero'));
     }
@@ -60,6 +62,7 @@ class PremiereSectionController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('edit');
         
         $hero = PremiereSection::find($id);
         return view('backoffice.hero.edit', compact('hero'));
@@ -93,7 +96,8 @@ class PremiereSectionController extends Controller
      */
     public function destroy($id)
     {
-        // $this->authorize("delete", PremiereSection::class);
+        $this->authorize("delete", PremiereSection::class);
+
         $hero = PremiereSection::find($id);
         $hero->delete();
         return redirect()->back();

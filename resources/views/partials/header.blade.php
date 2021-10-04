@@ -17,6 +17,7 @@
           @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block d-flex">
                     @auth
+                    <a href="/backoffice" class="text-sm text-gray-700 dark:text-gray-500 underline">backoffice</a>
                     <form style=" margin-left:1; width:100%" method="POST" action="{{ route('logout') }}">
         
                         @csrf

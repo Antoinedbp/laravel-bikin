@@ -14,7 +14,7 @@ use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\Titre;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class BackController extends Controller
 {
@@ -68,6 +68,8 @@ class BackController extends Controller
      */
     public function show($id)
     {
+        $this->authorize('edit');
+        
         $var = $id;
         return view('pages.mainBO', compact('var'));
     }

@@ -17,8 +17,11 @@
               <th scope="col">Logo</th>
               <th scope="col">Titre</th>
               <th scope="col">Description</th>
+              @can('edit')
               <th scope="col">Edit</th>
+              
               <th scope="col">Show</th>
+              @endcan
               <th scope="col">Delete</th>
             </tr>
           </thead>
@@ -29,13 +32,17 @@
               <td>{{$item->logo}}</td>
               <td>{{$item->titre}}</td>
               <td>{{$item->description}}</td>
+              @can('edit')
               <td>
+               
                 <a href="{{route('services.edit', $item->id)}}">
                   <button class="btnEd" type="submit">
                     EDIT
                   </button>
                 </a>
+                
               </td>
+            
               <td>
                 <a href="{{route('services.show', $item->id)}}">
                   <button class="btnShow" type="submit">
@@ -43,6 +50,7 @@
                   </button>
                 </a>
               </td>
+              @endcan
               <td>
                 <form action="{{route('services.destroy', $item->id)}}" method="post">
                   @csrf
