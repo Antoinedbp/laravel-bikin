@@ -17,7 +17,7 @@ class Webmaster
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role->nom ==="Webmaster") {
+        if (!auth()->check() || Auth::user()->role->nom ==="Webmaster") {
             return $next($request);
         } else {
             return redirect()->back();

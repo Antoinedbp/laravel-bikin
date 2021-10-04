@@ -46,11 +46,13 @@
                     </a>
                   </td>
                   <td>
-                    <form action="{{route('titres.destroy', $item->id)}}" method="post">
-                      @csrf
-                          @method('DELETE')
-                          <button class="btnDel" type="submit">DELETE</button>
-                    </form>
+                    @can('titre-delete', $item)
+                      <form action="{{route('titres.destroy', $item->id)}}" method="post">
+                        @csrf
+                            @method('DELETE')
+                            <button class="btnDel" type="submit">DELETE</button>
+                      </form>
+                    @endcan
                   </td>
                 </tr>
               </tbody>

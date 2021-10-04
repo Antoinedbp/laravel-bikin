@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Titre;
+use App\Models\Role;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 
-class TitreController extends Controller
+class RoleController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +17,7 @@ class TitreController extends Controller
      */
     public function index()
     {
-        $dataTitre = Titre::all();
-        return view('backoffice.titres.all', compact('dataTitre'));
+        //
     }
 
     /**
@@ -43,60 +44,45 @@ class TitreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Titre $titre)
+    public function show(Role $role)
     {
-        return view('backoffice.titres.show', compact('titre'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titre $titre)
+    public function edit(Role $role)
     {
-        
-        return view('backoffice.titres.edit', compact('titre'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titre $titre)
+    public function update(Request $request, Role $role)
     {
-
-        // $this->authorize("update", Titre::class);
-
-        request()->validate([
-            "titre"=>["required"],
-            "description"=>["required"]
-        ]);
-        
-        $titre->titre = $request->titre;
-        $titre->description = $request->description;
-        $titre->save();
-        return redirect('/');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titre $titre)
+    public function destroy(Role $role)
     {
-        // $this->authorize("delete", Titre::class);
-
-        $titre->delete();
-        return redirect()->back();
+        //
     }
 }

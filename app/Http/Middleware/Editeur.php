@@ -17,7 +17,7 @@ class Editeur
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role->nom ==="Editeur") {
+        if (!auth()->check() || Auth::user()->role->nom ==="Editeur") {
             return $next($request);
         } else {
             return redirect()->back();
