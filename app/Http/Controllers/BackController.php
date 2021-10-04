@@ -69,6 +69,7 @@ class BackController extends Controller
     public function show($id)
     {
         $this->authorize('edit');
+        
         $var = $id;
         return view('pages.mainBO', compact('var'));
     }

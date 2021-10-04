@@ -30,5 +30,6 @@ class AuthServiceProvider extends ServiceProvider
              return $user->role_id == 1;
 
         });
+        
     }
 }

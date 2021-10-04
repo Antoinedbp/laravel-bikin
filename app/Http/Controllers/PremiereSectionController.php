@@ -96,7 +96,8 @@ class PremiereSectionController extends Controller
      */
     public function destroy($id)
     {
-        // $this->authorize("delete", PremiereSection::class);
+        $this->authorize("delete", PremiereSection::class);
+
         $hero = PremiereSection::find($id);
         $hero->delete();
         return redirect()->back();

@@ -38,7 +38,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize("update", Team::class);
+        $this->authorize("create", Team::class);
 
         request()->validate([
             "photo"=>["required"],

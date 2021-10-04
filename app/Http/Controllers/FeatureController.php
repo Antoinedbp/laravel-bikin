@@ -68,6 +68,7 @@ class FeatureController extends Controller
     public function show(Feature $feature)
     {
         $this->authorize('edit');
+
         return view('backoffice.features.show', compact('feature'));
     }
 
@@ -80,6 +81,7 @@ class FeatureController extends Controller
     public function edit(Feature $feature)
     {
         $this->authorize('edit');
+        
         return view('backoffice.features.edit', compact('feature'));
     }
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Navbar;
+use App\Models\Role;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class NavbarController extends Controller
+class RoleController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +17,7 @@ class NavbarController extends Controller
      */
     public function index()
     {
-        
-        $dataNav = Navbar::all();
-        return view('backoffice.header.all', compact('dataNav'));
+        //
     }
 
     /**
@@ -44,59 +44,45 @@ class NavbarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Navbar  $navbar
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Navbar $navbar)
+    public function show(Role $role)
     {
-        $this->authorize('edit');
-        return view('backoffice.header.show', compact('navbar'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Navbar  $navbar
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        $this->authorize('edit');
-        $navbar=Navbar::find($id);
-        return view('backoffice.header.edit', compact('navbar'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Navbar  $navbar
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Navbar $navbar)
+    public function update(Request $request, Role $role)
     {
-        $this->authorize("update", Navbar::class);
-
-        request()->validate([
-            "chemin"=>["required"]
-        ]);
-        
-        $navbar->chemin = $request->chemin;
-        $navbar->save();
-        return redirect('/');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Navbar  $navbar
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        $this->authorize("delete", Navbar::class);
-        $navbar=Navbar::find($id);
-        $navbar->delete();
-        return redirect()->back();
+        //
     }
 }

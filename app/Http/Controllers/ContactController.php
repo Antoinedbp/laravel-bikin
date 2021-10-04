@@ -49,6 +49,7 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         $this->authorize('edit');
+
         return view('backoffice.contact.show', compact('contact'));
     }
 
@@ -61,6 +62,7 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
         $this->authorize('edit');
+        
         return view('backoffice.contact.edit', compact('contact'));
     }
 
