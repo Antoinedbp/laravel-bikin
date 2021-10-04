@@ -57,9 +57,9 @@ class NavbarController extends Controller
      * @param  \App\Models\Navbar  $navbar
      * @return \Illuminate\Http\Response
      */
-    public function edit(Navbar $navbar)
+    public function edit($id)
     {
-        
+        $navbar=Navbar::find($id);
         return view('backoffice.header.edit', compact('navbar'));
     }
 
@@ -89,10 +89,10 @@ class NavbarController extends Controller
      * @param  \App\Models\Navbar  $navbar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Navbar $navbar)
+    public function destroy($id)
     {
         // $this->authorize("delete", Navbar::class);
-
+        $navbar=Navbar::find($id);
         $navbar->delete();
         return redirect()->back();
     }

@@ -17,13 +17,10 @@
         @endif
             @csrf
             @method('PUT')
-            description: <input type="text" name="description" value="{{$testimonials->location}}">
-            Photo: <input type="number" name="locaDescription" value="{{$testimonials->locaDescription}}">
-            Email: <input type="text" name="email" value="{{$testimonials->email}}">
-            Description email: <input type="text" name="emailDescription" value="{{$testimonials->emailDescription}}">
-            call: <input type="text" name="call" value="{{$testimonials->call}}">
-            Description call: <input type="text" name="callDescription" value="{{$testimonials->callDescription}}">
-            Source: <input type="text" name="src" value="{{$testimonials->src}}">
+            Description: <input type="text" name="description" value="{{$testimonials->description}}">
+            Photo: <input type="file" name="photo" value="{{$testimonials->photo}}">
+            Nom: <input type="text" name="nom" value="{{$testimonials->nom}}">
+            Statut: <input type="text" name="statut" value="{{$testimonials->statut}}">
         </form>
     @endcan
 

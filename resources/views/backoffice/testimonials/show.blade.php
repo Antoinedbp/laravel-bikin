@@ -7,10 +7,12 @@
             Testimonials
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{$testimonials->titre}}</h5>
-                <p class="card-text">{{$testimonials->description}}</p>
+                <p class="card-text">{{$testimonial->description}}</p>
+                <img src="{{$testimonial->photo}}" alt="">
+                <h5 class="card-title">{{$testimonial->nom}}</h5>
+                <p class="card-text">{{$testimonial->statut}}</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{{route('testimonialss.edit', $testimonials->id)}}" class="btn btn-info">EDIT</a>
+                    <a href="{{route('testimonials.edit', $testimonial->id)}}" class="btn btn-info">EDIT</a>
                 </div>
             </div>
         </div>
