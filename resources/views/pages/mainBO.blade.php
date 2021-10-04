@@ -6,7 +6,7 @@
   <div class="globaleHome container " >
     <div class="row " >
 
-      <div class="col-6 skills">
+      <div class="col-12 skills">
         <h3 class="text-center">Modification TITRES</h3>
         <a href="{{route('titres.index')}}">
           <button class="btn btn-danger"type="submit">DIRECTION TITRES</button>
@@ -21,7 +21,7 @@
       <div class="col-6 abouti">
         <h3 class="text-center">Modification ABOUT</h3>
         <a href="{{route('abouts.index')}}">
-        <button class="btn btn-danger"type="submit">DIRECTION ABOUT</button>
+          <button class="btn btn-danger"type="submit">DIRECTION ABOUT</button>
         </a>
       </div>
       <div class="col-6 contacte">
@@ -31,10 +31,16 @@
         </a>
       </div>
       <div class="col-6 portfolios">
-          <h3 class="text-center">Modification SERVICES</h3>
-          <a href="{{route('services.index')}}">
-            <button class="btn btn-danger"type="submit">DIRECTION SERVICES</button>
-          </a>
+        <h3 class="text-center">Modification SERVICES</h3>
+        <a href="{{route('services.index')}}">
+          <button class="btn btn-danger"type="submit">DIRECTION SERVICES</button>
+        </a>
+      </div>
+      <div class="col-6 skills">
+        <h3 class="text-center">Modification TESTIMONIALS</h3>
+        <a href="{{route('testimonials.index')}}">
+          <button class="btn btn-danger"type="submit">DIRECTION TESTIMONIALS</button>
+        </a>
       </div>
       <div class="col-6 skills">
           <h3 class="text-center">Modification PORTFOLIOS</h3>
