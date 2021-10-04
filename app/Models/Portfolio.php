@@ -15,7 +15,7 @@ class Portfolio extends Model
         "image"
     ];
     public function photo() {
-        return $this->belongsTo(Photo::class);
+        return $this->belongsTo(Photo::class, "photo_id");
     }
    
 }

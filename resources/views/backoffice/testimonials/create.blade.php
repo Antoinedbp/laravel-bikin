@@ -29,5 +29,5 @@
         <input type="text"  class="form-control" id="exampleInputPassword1" name="statut">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form> 
+    </form>
 @endsection

@@ -15,7 +15,7 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
-            $table->string("photo_id");
+            $table->foreignId("photo_id")->constrained("photos", "id");
             $table->string("image");
             $table->timestamps();
         });

@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\Feature::factory(4)->create();
-        \App\Models\Testimonial::factory(7)->create();
+        \App\Models\Testimonial::factory(5)->create();
         \App\Models\Team::factory(4)->create();
         \App\Models\Contact::factory(1)->create();
-        \App\Models\Portfolio::factory(9)->create();
+       
         
         $this->call([
             TitreSeeder::class,
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class
         ]);
         \App\Models\User::factory(10)->create();
-        
+        \App\Models\Portfolio::factory(9)->create();
         DB::table('users')->insert([
             "name" => "Antoine",
             "email" => "antoinedebassompierre@hotmail.com",
@@ -56,5 +56,6 @@ class DatabaseSeeder extends Seeder
             "role_id" => 2,
             "created_at" => now()
         ]);
+       
     }
 }

@@ -9,12 +9,12 @@ class Photo extends Model
 {
     use HasFactory;
 
-    protected $table = "portfolios";
+    protected $table = "photos";
 
-    protected $fillable = [
-        "nom"
-    ];
+    protected $fillable = 
+       ["nom"]
+    ;
     public function portfolios() {
-        return $this->hasMany(portfolios::class);
+        return $this->hasMany(Portfolio::class);
     }
 }

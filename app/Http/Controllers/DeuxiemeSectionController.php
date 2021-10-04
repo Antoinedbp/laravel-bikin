@@ -48,11 +48,11 @@ class DeuxiemeSectionController extends Controller
      * @param  \App\Models\DeuxiemeSection  $deuxiemeSection
      * @return \Illuminate\Http\Response
      */
-    public function show(DeuxiemeSection $deuxiemeSection)
+    public function show($id)
     {
-        $this->authorize('edit');
 
-        $about = $deuxiemeSection;
+        $this->authorize('edit');
+        $about = DeuxiemeSection::find($id);
         return view('backoffice.about.show', compact('about'));
     }
 
