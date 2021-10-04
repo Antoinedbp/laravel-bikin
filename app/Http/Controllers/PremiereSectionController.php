@@ -46,10 +46,11 @@ class PremiereSectionController extends Controller
      * @param  \App\Models\PremiereSection  $premiereSection
      * @return \Illuminate\Http\Response
      */
-    public function show(PremiereSection $premiereSection)
+    public function show($id)
     {
+        
+        $hero = PremiereSection::find($id);
         $this->authorize('edit');
-        $hero = $premiereSection;
         return view('backoffice.hero.show', compact('hero'));
     }
 
@@ -61,8 +62,9 @@ class PremiereSectionController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('edit');
+      
         $hero = PremiereSection::find($id);
+        $this->authorize('edit');
         return view('backoffice.hero.edit', compact('hero'));
     }
 
@@ -75,7 +77,7 @@ class PremiereSectionController extends Controller
      */
     public function update(Request $request, PremiereSection $premiereSection)
     {
-        $this->authorize("update", PremiereSection::class);
+        // $this->authorize("update", PremiereSection::class);
 
         request()->validate([
             "chemin"=>["required"]

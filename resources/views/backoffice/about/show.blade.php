@@ -7,6 +7,7 @@
             About
             </div>
             <div class="card-body">
+                {{ dd($about) }}
                 <p class="card-text">{{$about->chemin}}</p>
                 <p class="card-text">{{$about->logo}}</p>
                 <h5 class="card-title">{{$about->titre}}</h5>

@@ -15,9 +15,9 @@ class PhotoSeeder extends Seeder
     public function run()
     {
         DB::table('photos')->insert([
-            ["nom" => "App"],
-            ["nom" => "Web"],
-            ["nom" => "Card"],
+            ["nom" => "app"],
+            ["nom" => "web"],
+            ["nom" => "card"],
         ]);
     }
 }
