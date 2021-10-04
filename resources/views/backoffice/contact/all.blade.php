@@ -23,8 +23,11 @@
                 <th scope="col">1er logo</th>
                 <th scope="col">2ème logo</th>
                 <th scope="col">3ème logo</th>
+                @can('edit')
                 <th scope="col">Edit</th>
+               
                 <th scope="col">Show</th>
+                @endcan
                 <th scope="col">Delete</th>
               </tr>
             </thead>
@@ -37,13 +40,17 @@
                 <td>{{$item->logo1}}</td>
                 <td>{{$item->logo2}}</td>
                 <td>{{$item->logo3}}</td>
+                @can('edit')
                 <td>
+                 
                   <a href="{{route('contacts.edit', $item->id)}}">
                     <button class="btnEd" type="submit">
                       EDIT
                     </button>
                   </a>
+                  
                 </td>
+                
                 <td>
                   <a href="{{route('contacts.show', $item->id)}}">
                     <button class="btnShow" type="submit">
@@ -51,6 +58,7 @@
                     </button>
                   </a>
                 </td>
+                @endcan
                 <td>
                   <form action="{{route('contacts.destroy', $item->id)}}" method="post">
                     @csrf

@@ -28,8 +28,9 @@ class PortfolioFactory extends Factory
        static $i = 0;
        $i++;
         return [
+            
             "image"=>  "portfolio-".$i.".jpg",
-            "photo_id"=>$this->faker->numberBetween(1, count(Photo::all())),
+            "photo_id"=>$this->faker->numberBetween(1, 3),
             
         ];
         

@@ -38,7 +38,7 @@
             link10: <input type="text" name="link10" value="{{$footer->link10}}">
             description: <input type="text" name="description" value="{{$footer->description}}">
             titre: <input type="text" name="titre" value="{{$footer->titre}}">
-           
+            <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>
         </form>
 
 

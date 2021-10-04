@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feature;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class FeatureController extends Controller
 {
@@ -67,6 +67,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
+        $this->authorize('edit');
         return view('backoffice.features.show', compact('feature'));
     }
 
@@ -78,6 +79,7 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
+        $this->authorize('edit');
         return view('backoffice.features.edit', compact('feature'));
     }
 

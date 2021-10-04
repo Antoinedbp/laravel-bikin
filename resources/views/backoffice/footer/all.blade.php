@@ -33,8 +33,11 @@
               <th scope="col">link10</th>
               <th scope="col">Description</th>
               <th scope="col">Titre</th>
+              @can('edit')
               <th scope="col">Edit</th>
+             
               <th scope="col">Show</th>
+              @endcan
               <th scope="col">Delete</th>
               
             </tr>
@@ -59,6 +62,8 @@
               <th scope="row">{{$dataFooter->link10}}</th>
               <th scope="row">{{$dataFooter->description}}</th>
               <th scope="row">{{$dataFooter->titre}}</th>
+              
+              @can('edit')
               <td>
                
                 <a href="{{route('footers.edit', $dataFooter->id)}}">
@@ -67,7 +72,9 @@
                   </button>
                 </a>
                
+               
               </td>
+              
               <td>
                 <a href="{{route('footers.show', $dataFooter->id)}}">
                   <button class="btnShow" type="submit">
@@ -75,6 +82,7 @@
                   </button>
                 </a>
               </td>
+              @endcan
               <td>
                 <form action="{{route('footers.destroy', $dataFooter->id)}}" method="post">
                   @csrf

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
@@ -27,6 +27,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
+        $this->authorize('edit');
         return view('backoffice.testimonials.create');
     }
 
@@ -65,6 +66,7 @@ class TestimonialController extends Controller
      */
     public function show(Testimonial $testimonial)
     {
+        $this->authorize('edit');
         return view('backoffice.testimonials.show', compact('testimonial'));
     }
 
@@ -76,6 +78,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
+        $this->authorize('edit');
         return view('backoffice.testimonials.edit', compact('testimonial'));
     }
 

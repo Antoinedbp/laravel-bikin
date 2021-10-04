@@ -16,8 +16,11 @@
           <thead>
             <tr>
               <th scope="col">chemin</th>
+              @can('edit')
               <th scope="col">Edit</th>
+             
               <th scope="col">Show</th>
+              @endcan
               <th scope="col">Delete</th>
               
             </tr>
@@ -26,6 +29,7 @@
            
             <tr>
               <th scope="row">{{$dataHero[0]->chemin}}</th>
+              @can('edit')
               <td>
                
                 <a href="{{route('heros.edit', $dataHero[0]->id)}}">
@@ -34,7 +38,9 @@
                   </button>
                 </a>
                
+               
               </td>
+             
               <td>
                 <a href="{{route('heros.show', $dataHero[0]->id)}}">
                   <button class="btnShow" type="submit">
@@ -43,6 +49,7 @@
                 </a>
               </td>
               <td>
+                @endcan
                 <form action="{{route('heros.destroy', $dataHero[0]->id)}}" method="post">
                   @csrf
                       @method('DELETE')

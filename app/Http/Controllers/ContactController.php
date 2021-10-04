@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -48,6 +48,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        $this->authorize('edit');
         return view('backoffice.contact.show', compact('contact'));
     }
 
@@ -59,6 +60,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
+        $this->authorize('edit');
         return view('backoffice.contact.edit', compact('contact'));
     }
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Main;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class MainController extends Controller
+class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware(['auth', 'admin']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,10 +44,10 @@ class MainController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Main  $main
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Main $main)
+    public function show(User $user)
     {
         //
     }
@@ -53,10 +55,10 @@ class MainController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Main  $main
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Main $main)
+    public function edit(User $user)
     {
         //
     }
@@ -65,10 +67,10 @@ class MainController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Main  $main
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Main $main)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -76,10 +78,10 @@ class MainController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Main  $main
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Main $main)
+    public function destroy(User $user)
     {
         //
     }

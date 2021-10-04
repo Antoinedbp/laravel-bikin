@@ -24,11 +24,13 @@
                     @method('DELETE')
                     <button class="btnDel" type="submit">DELETE</button>
               </form>
+              @can('edit')
               <a href="{{route('headers.edit', $item->id)}}">
                 <button class="btnEd" type="submit">
                     EDIT
                 </button>
               </a>
+              @endcan
               
             </div>
           </div>

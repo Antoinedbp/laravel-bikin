@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DeuxiemeSection;
 use App\Models\Titre;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class DeuxiemeSectionController extends Controller
 {
@@ -50,6 +50,7 @@ class DeuxiemeSectionController extends Controller
      */
     public function show(DeuxiemeSection $deuxiemeSection)
     {
+        $this->authorize('edit');
         $about = $deuxiemeSection;
         return view('backoffice.about.show', compact('about'));
     }
@@ -62,6 +63,7 @@ class DeuxiemeSectionController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('edit');
         $about = DeuxiemeSection::find($id);
         return view('backoffice.about.edit', compact('about'));
     }

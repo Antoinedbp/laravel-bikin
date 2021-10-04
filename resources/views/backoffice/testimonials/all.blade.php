@@ -3,12 +3,10 @@
 @section('contentBO')
     <h1 class="titresBO">PARTIE TESTIMONIALS</h1>
 
-    <div class="buttonsBO">
-      <a href="{{route('hombo')}}" class="aBtn">
-          <button class="monBtn2" type="submit">Retour backoffice</button>
-      </a>
-    </div>
-    <div class="globaleProduct">
+    <a href="{{route('hombo')}}" class=" text-center" style="margin-left:45%">
+      <button class="monBtn2" type="submit">Retour backoffice</button>
+  </a>
+    <div class="globaleProduct container">
         
       
       <table class="table">
@@ -19,9 +17,13 @@
             <th scope="col">Image</th>
             <th scope="col">Nom</th>
             <th scope="col">Statut</th>
+            @can('edit')
             <th scope="col">Edit</th>
+           
             <th scope="col">Show</th>
+            @endcan
             <th scope="col">Delete</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -32,13 +34,17 @@
                 <td><img src="{{$item->photo}}" alt=""></td>
                 <td>{{$item->nom}}</td>
                 <td>{{$item->statut}}</td>
+                @can('edit')
                 <td>
+                 
                   <a href="{{route('testimonials.edit', $item->id)}}">
                     <button class="btnEd" type="submit">
                       EDIT
                     </button>
                   </a>
+                 
                 </td>
+               
                 <td>
                   <a href="{{route('testimonials.show', $item->id)}}">
                     <button class="btnShow" type="submit">
@@ -46,6 +52,7 @@
                     </button>
                   </a>
                 </td>
+                @endcan
                 <td>
                   <form action="{{route('testimonials.destroy', $item->id)}}" method="post">
                     @csrf

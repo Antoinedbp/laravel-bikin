@@ -22,6 +22,7 @@
             logo1: <input type="text" name="logo1" value="{{$contact->logo1}}">
             logo2: <input type="text" name="logo2" value="{{$contact->logo2}}">
             logo3: <input type="text" name="logo3" value="{{$contact->logo3}}">
+            <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>
         </form>
    
 

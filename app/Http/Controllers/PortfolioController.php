@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+// use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
@@ -49,6 +50,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
+        $this->authorize('edit');
         return view('backoffice.portfolio.show', compact('portfolio'));
     }
 
@@ -60,6 +62,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
+        $this->authorize('edit');
         return view('backoffice.portfolio.show', compact('portfolio'));
     }
 

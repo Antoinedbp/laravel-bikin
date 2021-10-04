@@ -1,7 +1,7 @@
 @extends('template.back')
 
 @section('contentBO')
-<h1 class="text-center">Modifier Team</h1>
+<h1 class="text-center">Modifier TEAM</h1>
     <br>
   
         <form class="container" action="{{route('teams.update', $team->id)}}" method="POST">
@@ -16,9 +16,10 @@
         @endif
             @csrf
             @method('PUT')
-            logo: <input type="text" name="logo" value="{{$team->photo}}">
-            titre: <input type="text" name="titre" value="{{$team->nom}}">
-            description: <input type="text" name="description" value="{{$team->statut}}">
+            photo: <input type="text" name="photo" value="{{$team->photo}}">
+            nom: <input type="text" name="nom" value="{{$team->nom}}">
+            statut: <input type="text" name="statut" value="{{$team->statut}}">
+            <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>
         </form>
     
 

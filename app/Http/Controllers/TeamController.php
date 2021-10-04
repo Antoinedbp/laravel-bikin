@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
@@ -63,6 +63,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
+        $this->authorize('edit');
         return view('backoffice.team.show', compact('team'));
 
     }
@@ -75,6 +76,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
+        $this->authorize('edit');
         return view('backoffice.team.edit', compact('team'));
     }
 
