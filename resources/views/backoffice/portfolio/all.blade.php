@@ -9,6 +9,7 @@
     <div class="globaleProduct ml-4 container">
         
       <table class="table">
+        
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -22,8 +23,11 @@
             <th scope="col">Delete</th>
           </tr>
         </thead>
+
         <tbody>
+
             @foreach ($dataPort as $item)
+
             <tr>
               <th scope="row">{{$item->id}}</th>
               <td>{{$item->photo_id}}</td>
@@ -40,22 +44,30 @@
               </td>
              
               <td>
+
                 <a href="{{route('portfolios.show', $item->id)}}">
                   <button class="btnShow" type="submit">
                       SHOW
                   </button>
                 </a>
+
               </td>
+
               @endcan
+
               <td>
+
                 <form action="{{route('portfolios.destroy', $item->id)}}" method="post">
                   @csrf
                       @method('DELETE')
                       <button class="btnDel" type="submit">DELETE</button>
                 </form>
+
               </td>
             </tr>
+
             @endforeach
+
           </tbody>
         </table>
 
