@@ -12,7 +12,7 @@
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="#">
+        <a href="/backoffice">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Dashboard</span>
         </a>
@@ -25,6 +25,13 @@
           <span class="links_name">Header</span>
         </a>
         <span class="tooltip">Header</span>
+      </li>
+      <li>
+        <a href="{{route('heros.index')}}">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Heros</span>
+        </a>
+        <span class="tooltip">Heros</span>
       </li>
       <li>
        <a href="{{route('abouts.index')}}">

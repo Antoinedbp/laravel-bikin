@@ -61,6 +61,7 @@ class PremiereSectionController extends Controller
     public function edit(PremiereSection $premiereSection)
     {
         $hero = $premiereSection;
+   
         return view('backoffice.hero.edit', compact('hero'));
     }
 
@@ -92,8 +93,8 @@ class PremiereSectionController extends Controller
      */
     public function destroy(PremiereSection $premiereSection)
     {
-        $this->authorize("delete", PremiereSection::class);
-
+        // $this->authorize("delete", PremiereSection::class);
+        dd($premiereSection);
         $hero = $premiereSection;
         $hero->delete();
         return redirect()->back();

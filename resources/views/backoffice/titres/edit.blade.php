@@ -18,7 +18,7 @@
             @csrf
             @method('PUT')
             <p class="p1">Titre:</p>
-            <input type="text" name="titre" class="main" value="{{$titre->titre}}"></input>
+            <input type="text" name="titre" class="main" value="{{$titre->titre}}"/>
             <p class="p1">Description:</p>
             <textarea type="text" name="description" class="main" style="height:max-content" value="">{{$titre->description}}</textarea>
             <button type="submit" style="height:2.5rem" class="btn btn-success mt-2 text-center">Submit</button>

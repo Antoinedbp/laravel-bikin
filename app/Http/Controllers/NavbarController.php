@@ -59,6 +59,7 @@ class NavbarController extends Controller
      */
     public function edit(Navbar $navbar)
     {
+        
         return view('backoffice.header.edit', compact('navbar'));
     }
 
@@ -71,7 +72,7 @@ class NavbarController extends Controller
      */
     public function update(Request $request, Navbar $navbar)
     {
-        $this->authorize("update", Navbar::class);
+        // $this->authorize("update", Navbar::class);
 
         request()->validate([
             "chemin"=>["required"]
@@ -90,7 +91,7 @@ class NavbarController extends Controller
      */
     public function destroy(Navbar $navbar)
     {
-        $this->authorize("delete", Navbar::class);
+        // $this->authorize("delete", Navbar::class);
 
         $navbar->delete();
         return redirect()->back();

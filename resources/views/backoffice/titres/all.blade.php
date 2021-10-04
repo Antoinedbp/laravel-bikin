@@ -30,11 +30,13 @@
                   <td>{{$item->titre}}</td>
                   <td>{{$item->description}}</td>
                   <td>
+                    @can('titre-edit', $item) 
                     <a href="{{route('titres.edit', $item->id)}}">
                       <button class="btnEd" type="submit">
                         EDIT
                       </button>
                     </a>
+                    @endcan
                   </td>
                   <td>
                     <a href="{{route('titres.show', $item->id)}}">
