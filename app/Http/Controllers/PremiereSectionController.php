@@ -58,10 +58,10 @@ class PremiereSectionController extends Controller
      * @param  \App\Models\PremiereSection  $premiereSection
      * @return \Illuminate\Http\Response
      */
-    public function edit(PremiereSection $premiereSection)
+    public function edit($id)
     {
-        $hero = $premiereSection;
-   
+        
+        $hero = PremiereSection::find($id);
         return view('backoffice.hero.edit', compact('hero'));
     }
 
@@ -91,11 +91,10 @@ class PremiereSectionController extends Controller
      * @param  \App\Models\PremiereSection  $premiereSection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PremiereSection $premiereSection)
+    public function destroy($id)
     {
         // $this->authorize("delete", PremiereSection::class);
-        dd($premiereSection);
-        $hero = $premiereSection;
+        $hero = PremiereSection::find($id);
         $hero->delete();
         return redirect()->back();
     }

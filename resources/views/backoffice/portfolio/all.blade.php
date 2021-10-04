@@ -8,7 +8,7 @@
           <button class="monBtn2" type="submit">Retour backoffice</button>
       </a>
     </div>
-    <div class="globaleProduct">
+    <div class="globaleProduct ml-4">
         
       <table class="table">
         <thead>
@@ -26,7 +26,7 @@
             <tr>
               <th scope="row">{{$item->id}}</th>
               <td>{{$item->photo_id}}</td>
-              <td><img src="{{$item->image}}" alt=""></td>
+              <td><img src="{{asset('assets/img/portfolio/'.$item->image)}}" style="height:3rem" class="img-fluid" alt="Responsive image"></td>
               <td>
                 <a href="{{route('portfolios.edit', $item->id)}}">
                   <button class="btnEd" type="submit">
@@ -49,10 +49,10 @@
                 </form>
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
 
-        @endforeach
     </div>
 
 @endsection

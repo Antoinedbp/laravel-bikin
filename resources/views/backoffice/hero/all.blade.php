@@ -23,12 +23,12 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($dataHero as $item)
+           
             <tr>
-              <th scope="row">{{$item->chemin}}</th>
+              <th scope="row">{{$dataHero[0]->chemin}}</th>
               <td>
                
-                <a href="{{route('heros.edit', $item->id)}}">
+                <a href="{{route('heros.edit', $dataHero[0]->id)}}">
                   <button class="btnEd" type="submit">
                     EDIT
                   </button>
@@ -36,21 +36,21 @@
                
               </td>
               <td>
-                <a href="{{route('heros.show', $item->id)}}">
+                <a href="{{route('heros.show', $dataHero[0]->id)}}">
                   <button class="btnShow" type="submit">
                       SHOW
                   </button>
                 </a>
               </td>
               <td>
-                <form action="{{route('heros.destroy', $item->id)}}" method="post">
+                <form action="{{route('heros.destroy', $dataHero[0]->id)}}" method="post">
                   @csrf
                       @method('DELETE')
                       <button class="btnDel" type="submit">DELETE</button>
                 </form>
               </td>
             </tr> 
-            @endforeach
+         
            
           </tbody>
         </table>
