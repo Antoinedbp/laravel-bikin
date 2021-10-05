@@ -54,6 +54,18 @@
             <button class="btn btn-danger"type="submit">DIRECTION PORTFOLIOS</button>
           </a>
       </div>
+      <div class="col-6 skills">
+        <h3 class="text-center">Modification CONTACTS</h3>
+        <a href="{{route('contacts.index')}}"> 
+          <button class="btn btn-danger"type="submit">DIRECTION CONTACTS</button>
+        </a>
+    </div>
+    <div class="col-6 skills">
+      <h3 class="text-center">Modification TEAMS</h3>
+      <a href="{{route('teams.index')}}"> 
+        <button class="btn btn-danger"type="submit">DIRECTION TEAMS</button>
+      </a>
+  </div>
     </div>
   </div>
 

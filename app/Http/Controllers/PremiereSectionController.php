@@ -75,14 +75,14 @@ class PremiereSectionController extends Controller
      * @param  \App\Models\PremiereSection  $premiereSection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PremiereSection $premiereSection)
+    public function update(Request $request, $id)
     {
         // $this->authorize("update", PremiereSection::class);
 
         request()->validate([
             "chemin"=>["required"]
         ]);
-        
+        $premiereSection = PremiereSection::find($id);
         $premiereSection->chemin = $request->chemin;
         $premiereSection->save();
         return redirect('/');

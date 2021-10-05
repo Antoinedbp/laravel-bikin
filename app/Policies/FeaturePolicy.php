@@ -51,7 +51,7 @@ class FeaturePolicy
      * @param  \App\Models\Feature  $feature
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Feature $feature)
+    public function update(User $user)
     {
         return in_array($user->role_id, [1, 2]);
     }

@@ -77,7 +77,7 @@ class DeuxiemeSectionController extends Controller
      * @param  \App\Models\DeuxiemeSection  $deuxiemeSection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DeuxiemeSection $deuxiemeSection)
+    public function update(Request $request, $id)
     {
         
         $this->authorize("update", DeuxiemeSection::class);
@@ -88,7 +88,7 @@ class DeuxiemeSectionController extends Controller
             "titre"=>["required"],
             "description"=>["required"]
         ]);
-        
+        $deuxiemeSection = DeuxiemeSection::find($id);
         $deuxiemeSection->chemin = $request->chemin;
         $deuxiemeSection->logo = $request->logo;
         $deuxiemeSection->titre = $request->titre;

@@ -13,17 +13,13 @@
           </a>
         
         @foreach ($dataNav as $item)
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; margin: 0.25rem">
           
           <div class="card-body">
            
             <p class="card-text text-center">{{ $item->chemin }}</p>
             <div class="buttonDelEd justify-content-around">
-              <form action="{{route('headers.destroy', $item->id)}}" method="post">
-                @csrf
-                    @method('DELETE')
-                    <button class="btnDel" type="submit">DELETE</button>
-              </form>
+              
               @can('edit')
               <a href="{{route('headers.edit', $item->id)}}">
                 <button class="btnEd" type="submit">
@@ -31,7 +27,11 @@
                 </button>
               </a>
               @endcan
-              
+              <form action="{{route('headers.destroy', $item->id)}}" method="post">
+                @csrf
+                    @method('DELETE')
+                    <button class="btnDel" type="submit">DELETE</button>
+              </form>
             </div>
           </div>
         </div>

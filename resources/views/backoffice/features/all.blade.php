@@ -36,7 +36,7 @@
             @foreach ($dataFeat as $item)
             <tr>
               <th scope="row">{{$item->id}}</th>
-              <td><img height="30px" width="30px" src="{{$item->image}}" alt=""></td>
+              <td><img height="30px" width="30px" src="{{ asset('assets/img/'.$item->image) }}" alt=""></td>
               <td>{{$item->titre}}</td>
               <td>{{$item->sous_titre}}</td>
               <td>{{$item->description1}}</td>

@@ -2,7 +2,7 @@
   <div class="sidebar" style="padding: 0">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">CodingLab</div>
+        <div class="logo_name">Bikin</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list" style="overflow: auto; padding-right: 0.5rem; padding-left: 0">
@@ -113,14 +113,7 @@
         </form>
    </li>
     
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-    
+     
 
         
         

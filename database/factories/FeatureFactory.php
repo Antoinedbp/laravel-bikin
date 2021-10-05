@@ -21,8 +21,10 @@ class FeatureFactory extends Factory
      */
     public function definition()
     {
+        static $i = 0;
+        $i++;
         return [
-            'image'=>$this->faker->imageUrl(),
+            'image'=>"features-".$i.".png",
             'titre'=>$this->faker->sentence(),
             'sous_titre'=>$this->faker->paragraph(),
             'description1'=>$this->faker->sentence(),

@@ -5,7 +5,7 @@
     <h1 class="w-100 text-center">Modifier Features</h1>
     <br>
 
-        <form class="container" action="{{route('features.update', $feature->id)}}" method="POST">
+        <form class="container" action="{{route('features.update', $feature->id)}}" method="POST" enctype="multipart/form-data">
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -17,7 +17,7 @@
         @endif
             @csrf
             @method('PUT')
-            image: <input type="text" name="image" value="{{$feature->image}}">
+            image: <input type="file" name="image" value="{{$feature->image}}">
             titre: <input type="text" name="titre" value="{{$feature->titre}}">
             sous_titre: <input type="text" name="sous_titre" value="{{$feature->sous_titre}}">
             description1: <input type="text" name="description1" value="{{$feature->description1}}">

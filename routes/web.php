@@ -34,7 +34,7 @@ Route::resource('/titres', TitreController::class)->middleware('auth', 'admin');
 Route::resource('/headers', NavbarController::class)->middleware('auth', 'admin');
 Route::resource('/heros', PremiereSectionController::class)->middleware('auth', 'admin');
 Route::resource('/abouts', DeuxiemeSectionController::class)->middleware('auth', 'admin');
-Route::resource('/features', FeatureController::class)->middleware('auth', 'Webmaster');
+Route::resource('/features', FeatureController::class)->middleware('auth', 'webmaster');
 Route::resource('/services', ServiceController::class)->middleware('auth', 'admin');
 Route::resource('/portfolios', PortfolioController::class)->middleware('auth', 'admin');
 Route::resource('/testimonials', TestimonialController::class)->middleware('auth', 'admin');

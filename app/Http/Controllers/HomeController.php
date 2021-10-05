@@ -29,7 +29,7 @@ class HomeController extends Controller
         $headers = Navbar::all();
         $heros = PremiereSection::all();
         $abouts = DeuxiemeSection::all();
-        $features = Feature::first();
+        $features = Feature::all();
         $services = Service::first();
         $servicee = Service::all();
         $portfolios = Portfolio::all();

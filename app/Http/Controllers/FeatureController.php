@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Feature;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class FeatureController extends Controller
 {
@@ -96,6 +97,15 @@ class FeatureController extends Controller
     {
         $this->authorize("update", Feature::class);
 
+
+        Storage::disk('public')->delete("assets/img/".$feature->image);
+      
+        $feature->image = $request->file("image");
+
+
+
+
+
         request()->validate([
             "image"=>["required"],
             "titre"=>["required"],
@@ -105,13 +115,14 @@ class FeatureController extends Controller
             "description3"=>["required"]
         ]);
 
-        $feature->image = $request->image;
+        
         $feature->titre = $request->titre;
         $feature->sous_titre = $request->sous_titre;
         $feature->description1 = $request->description1;
         $feature->description2 = $request->description2;
         $feature->description3 = $request->description3;
         $feature->save();
+        $request->file("image")->storePublicly("img", "public");
         return redirect('/');
     }
 
