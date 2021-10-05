@@ -8,6 +8,7 @@ use App\Http\Controllers\DeuxiemeSectionController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PremiereSectionController;
 use App\Http\Controllers\ServiceController;
@@ -30,17 +31,19 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/backoffice',[BackController::class, 'index'])->name('hombo');
 
-Route::resource('/titres', TitreController::class)->middleware('auth', 'admin');
-Route::resource('/headers', NavbarController::class)->middleware('auth', 'admin');
-Route::resource('/heros', PremiereSectionController::class)->middleware('auth', 'admin');
-Route::resource('/abouts', DeuxiemeSectionController::class)->middleware('auth', 'admin');
-Route::resource('/features', FeatureController::class)->middleware('auth', 'webmaster');
-Route::resource('/services', ServiceController::class)->middleware('auth', 'admin');
-Route::resource('/portfolios', PortfolioController::class)->middleware('auth', 'admin');
-Route::resource('/testimonials', TestimonialController::class)->middleware('auth', 'admin');
-Route::resource('/teams', TeamController::class)->middleware('auth', 'admin');
-Route::resource('/contacts', ContactController::class)->middleware('auth', 'admin');
-Route::resource('/footers', FooterController::class)->middleware('auth', 'admin');
+Route::resource('/titres', TitreController::class)->middleware(['auth', 'admin']);
+Route::resource('/headers', NavbarController::class)->middleware(['auth', 'admin']);
+Route::resource('/heros', PremiereSectionController::class)->middleware(['auth', 'admin']);
+Route::resource('/abouts', DeuxiemeSectionController::class)->middleware(['auth', 'admin']);
+Route::resource('/features', FeatureController::class)->middleware(['auth', 'webmaster']);
+Route::resource('/services', ServiceController::class)->middleware(['auth', 'admin']);
+Route::resource('/portfolios', PortfolioController::class)->middleware(['auth', 'admin']);
+Route::resource('/testimonials', TestimonialController::class)->middleware(['auth', 'admin']);
+Route::resource('/teams', TeamController::class)->middleware(['auth', 'admin']);
+Route::resource('/contacts', ContactController::class)->middleware(['auth', 'admin']);
+Route::resource('/footers', FooterController::class)->middleware(['auth', 'admin']);
+
+Route::post("send-mail",  [MailController::class, "sendMail"])->name("sendMail");
 
 Route::get('/dashboard', function () {
     return view('dashboard');

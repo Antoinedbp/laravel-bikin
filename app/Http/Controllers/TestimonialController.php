@@ -27,7 +27,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        $this->authorize('edit');
+        $this->authorize('edit', Testimonial::class);
         return view('backoffice.testimonials.create');
     }
 
@@ -39,7 +39,7 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize("create", Testimonial::class);
+        // $this->authorize("create", Testimonial::class);
 
         $request->validate([
             "description" => ["required"],
@@ -50,10 +50,10 @@ class TestimonialController extends Controller
 
         $testimonial = new Testimonial;
         $testimonial->description = $request->description;
-        $testimonial->photo = $request->file("img")->hashName();
+        $testimonial->photo = $request->file("photo")->hashName();
         $testimonial->nom = $request->nom;
         $testimonial->statut = $request->statut;
-        $request->file("img")->storePublicly("img", "public");
+        $request->file("photo")->storePublicly("img", "public");
         $testimonial->save();
         return redirect()->route('testimonials.index');
     }
@@ -100,14 +100,12 @@ class TestimonialController extends Controller
             "statut" => ["required"]
         ]);
 
+        Storage::disk("public")->delete("img/" . $testimonial->photo);
         $testimonial->description = $request->description;
-        if ($request->file('img') !== null) {
-            Storage::disk("public")->delete("img/" . $testimonial->photo);
-            $testimonial->photo= $request->file("img")->hashName();
-            $request->file("img")->storePublicly("img", "public");
-        }
+        $testimonial->photo= $request->file("photo")->hashName();
         $testimonial->nom = $request->nom;
         $testimonial->statut = $request->statut;
+        $request->file("photo")->storePublicly("img", "public");
         $testimonial->save();
         return redirect()->route('testimonials.index');
     }

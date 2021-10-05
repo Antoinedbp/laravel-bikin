@@ -90,13 +90,6 @@
       </a>
       <span class="tooltip">Contact</span>
     </li>
-    <li>
-      <a href="{{route('footers.index')}}">
-        <i class='bx bx-cart-alt' ></i>
-        <span class="links_name">Footer</span>
-      </a>
-      <span class="tooltip">Footer</span>
-    </li>
     <li style="display: flex">
        
       <!-- Authentication -->
@@ -112,6 +105,14 @@
           </x-dropdown-link>
         </form>
    </li>
+    <li class="mb-3">
+      <a href="{{route('footers.index')}}">
+        <i class='bx bx-cart-alt' ></i>
+        <span class="links_name">Footer</span>
+      </a>
+      <span class="tooltip">Footer</span>
+    </li>
+    
     
      
 

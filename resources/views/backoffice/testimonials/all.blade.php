@@ -6,6 +6,9 @@
     <a href="{{route('hombo')}}" class=" text-center" style="margin-left:45%">
       <button class="monBtn2" type="submit">Retour backoffice</button>
   </a>
+  <div class="d-flex justify-content-center">
+    <a href="{{route('testimonials.create')}}" class="btn btn-success">Create</a>
+  </div>
     <div class="globaleProduct container">
         
       
