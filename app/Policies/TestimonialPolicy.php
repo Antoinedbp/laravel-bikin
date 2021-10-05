@@ -30,7 +30,7 @@ class TestimonialPolicy
      */
     public function view(User $user, Testimonial $testimonial)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**
@@ -41,7 +41,7 @@ class TestimonialPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**
@@ -53,7 +53,7 @@ class TestimonialPolicy
      */
     public function update(User $user, Testimonial $testimonial)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**
@@ -65,7 +65,7 @@ class TestimonialPolicy
      */
     public function delete(User $user, Testimonial $testimonial)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**

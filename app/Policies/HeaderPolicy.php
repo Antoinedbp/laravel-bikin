@@ -30,7 +30,7 @@ class HeaderPolicy
      */
     public function view(User $user, Navbar $navbar)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**
@@ -41,7 +41,7 @@ class HeaderPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**
@@ -53,7 +53,7 @@ class HeaderPolicy
      */
     public function update(User $user, Navbar $navbar)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**
@@ -65,7 +65,7 @@ class HeaderPolicy
      */
     public function delete(User $user, Navbar $navbar)
     {
-        return in_array($user->role_id, [1, 2]);
+        return in_array($user->role_id, [2, 3]);
     }
 
     /**

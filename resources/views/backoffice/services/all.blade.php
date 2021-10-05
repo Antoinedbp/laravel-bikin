@@ -29,7 +29,7 @@
             @foreach ($dataService as $item)
             <tr>
               <th scope="row">{{$item->id}}</th>
-              <td>{{$item->logo}}</td>
+              <td><div class="icon"><i class="{{ $item->logo }}"></i></div></td>
               <td>{{$item->titre}}</td>
               <td>{{$item->description}}</td>
               @can('edit')
