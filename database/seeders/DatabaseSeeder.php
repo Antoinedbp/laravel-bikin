@@ -56,6 +56,13 @@ class DatabaseSeeder extends Seeder
             "role_id" => 2,
             "created_at" => now()
         ]);
+        DB::table('users')->insert([
+            "name" => "Van",
+            "email" => "van@email.com",
+            "password" => Hash::make('testtest'),
+            "role_id" => 3,
+            "created_at" => now()
+        ]);
        
     }
 }
