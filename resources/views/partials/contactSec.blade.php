@@ -45,11 +45,11 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
               </div>
             </div>
             <div class="form-group mt-3 w-100">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" >
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
             </div>
             <div class="form-group mt-3 w-100">
               <textarea class="form-control" name="message" rows="5" placeholder="Message" ></textarea>

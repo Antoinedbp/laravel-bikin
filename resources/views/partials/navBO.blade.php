@@ -91,7 +91,14 @@
       <span class="tooltip">Contact</span>
     </li>
     <li style="display: flex">
-       
+      <li class="mb-3">
+        <a href="{{route('footers.index')}}">
+          <i class='bx bx-cart-alt' ></i>
+          <span class="links_name">Footer</span>
+        </a>
+        <span class="tooltip">Footer</span>
+      </li>
+      
       <!-- Authentication -->
       
       <form style=" margin-left:0; width:100%" method="POST" action="{{ route('logout') }}">
@@ -105,13 +112,6 @@
           </x-dropdown-link>
         </form>
    </li>
-    <li class="mb-3">
-      <a href="{{route('footers.index')}}">
-        <i class='bx bx-cart-alt' ></i>
-        <span class="links_name">Footer</span>
-      </a>
-      <span class="tooltip">Footer</span>
-    </li>
     
     
      

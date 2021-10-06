@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\UserMail;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as RoutingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends RoutingController
@@ -44,11 +46,19 @@ class RegisteredUserController extends RoutingController
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role_id' => 3,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+
+        $contenuUser = [
+            "name" => $request->name,
+            "email" => $request->email
+        ];
+
+        Mail::to('antoinedebassompierre@hotmail.com')->send(new UserMail($contenuUser));
 
         return redirect(RouteServiceProvider::HOME);
     }

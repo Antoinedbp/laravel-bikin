@@ -31,10 +31,10 @@ class HomeController extends Controller
         $abouts = DeuxiemeSection::all();
         $features = Feature::all();
         $services = Service::first();
-        $servicee = Service::all();
+        $servicee = Service::all()->random(4);
         $portfolios = Portfolio::all();
         $testimonials = Testimonial::all();
-        $teams = Team::all();
+        $teams = Team::all()->random(4);
         $contacts = Contact::first();
         $footers = Footer::first();
         return view('pages.main', compact('titres', 'headers', 'heros', 'abouts', 'features', 'services', 'servicee', 'portfolios', 'testimonials', 'teams', 'contacts', 'footers'));
